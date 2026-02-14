@@ -17,7 +17,7 @@ const Comparison: React.FC = () => {
                     <div>
                         <span className="font-sans text-[10px] text-[#A88464] uppercase tracking-[0.4em] mb-10 block font-bold">Comparative Logic</span>
                         <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-12">Systemic <br /><span className="italic gold-gradient">Superiority.</span></h2>
-                        <p className="text-stone-500 text-lg leading-relaxed mb-16 font-light max-w-xl">
+                        <p className="text-stone-300 text-lg leading-relaxed mb-16 font-light max-w-xl">
                             In the high-stakes theater of law, the gap between "fast" and "instant" is the difference between a settlement and a victory. Lawxygen removes the friction of history.
                         </p>
                         <div className="space-y-16">
@@ -25,8 +25,8 @@ const Comparison: React.FC = () => {
                                 <div key={i} className="relative group/bar">
                                     <div className="flex justify-between items-end mb-6">
                                         <div className="space-y-1">
-                                            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-600 block">{item.label}</span>
-                                            <span className="text-xs uppercase text-stone-400 font-bold tracking-widest transition-colors group-hover/bar:text-white">Legacy: {item.legacy}</span>
+                                            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 block">{item.label}</span>
+                                            <span className="text-xs uppercase text-stone-200 font-bold tracking-widest transition-colors group-hover/bar:text-white">Legacy: {item.legacy}</span>
                                         </div>
                                         <div className="text-right">
                                             <span className="font-sans text-[10px] text-[#A88464] font-black tracking-widest mb-1 block">+{item.improvement}</span>
@@ -52,7 +52,7 @@ const Comparison: React.FC = () => {
                                 </div>
                                 <h4 className="text-8xl font-black serif text-[#A88464] mb-4 select-none italic drop-shadow-2xl">92%</h4>
                                 <p className="text-white font-bold serif text-3xl mb-4 italic">Efficiency Singularity</p>
-                                <p className="text-stone-500 text-base max-w-[280px] mx-auto font-light leading-relaxed">Average reduction in discovery & synthesis cycles for Tier 1 firms.</p>
+                                <p className="text-zinc-400 text-base max-w-[280px] mx-auto font-light leading-relaxed">Average reduction in discovery & synthesis cycles for Tier 1 firms.</p>
                             </div>
                         </div>
                         {/* HUD Decoration */}

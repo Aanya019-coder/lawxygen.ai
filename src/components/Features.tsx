@@ -36,7 +36,7 @@ const Features: React.FC = () => {
                         <span className="font-sans text-[10px] text-[#A88464] uppercase tracking-[0.4em] mb-8 block font-bold">Core Capabilities</span>
                         <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">Legal Intelligence <br /><span className="italic gold-gradient">Reimagined.</span></h2>
                     </div>
-                    <p className="text-stone-500 text-lg max-w-md italic border-l border-[#A88464]/20 pl-8 leading-relaxed font-light">
+                    <p className="text-stone-300 text-lg max-w-md italic border-l border-[#A88464]/20 pl-8 leading-relaxed font-light">
                         We've distilled the complexity of law into a seamless cognitive companion for the world's most elite attorneys.
                     </p>
                 </div>
@@ -54,7 +54,7 @@ const Features: React.FC = () => {
                                 {feature.icon}
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-6 serif italic transition-colors group-hover:text-[#C5A059]">{feature.title}</h3>
-                            <p className="text-stone-500 leading-relaxed text-sm font-light transition-colors group-hover:text-stone-400">
+                            <p className="text-stone-400 leading-relaxed text-sm font-light transition-colors group-hover:text-stone-200">
                                 {feature.description}
                             </p>
                         </div>

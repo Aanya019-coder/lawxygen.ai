@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
                     </h1>
 
                     <div className="max-w-2xl translate-y-4 opacity-0 animate-[reveal_1s_ease-out_forwards]">
-                        <p className="text-xl md:text-2xl text-stone-400 font-light leading-relaxed mb-16 border-l-2 border-[#A88464]/30 pl-8 transition-colors hover:border-[#A88464]">
+                        <p className="text-xl md:text-2xl text-stone-300 font-light leading-relaxed mb-16 border-l-2 border-[#A88464]/30 pl-8 transition-colors hover:border-[#A88464]">
                             Lawxygen isn't a tool; it's a cognitive shift. We've synthesized the world's legal archives into a single, high-fidelity intelligence layer for the elite firm.
                         </p>
 
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
                                 <span className="relative z-10 text-white font-bold uppercase tracking-widest text-sm">Initiate Protocol</span>
                             </button>
 
-                            <button className="px-8 py-5 border border-stone-800 text-stone-500 hover:text-white hover:bg-white/5 transition-all uppercase tracking-widest text-xs font-bold rounded-sm relative overflow-hidden group">
+                            <button className="px-8 py-5 border border-stone-800 text-stone-400 hover:text-white hover:bg-white/5 transition-all uppercase tracking-widest text-xs font-bold rounded-sm relative overflow-hidden group">
                                 <span className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#A88464] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
                                 The Lab Report — 2025
                             </button>
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
                         </div>
 
                         <div className="p-8 h-full flex flex-col justify-end relative z-20">
-                            <div className="font-sans text-[10px] text-stone-500 mb-4 tracking-tighter leading-none uppercase space-y-1">
+                            <div className="font-sans text-[10px] text-zinc-400 mb-4 tracking-tighter leading-none uppercase space-y-1">
                                 <div className="flex items-center space-x-2">
                                     <span className="w-1.5 h-1.5 bg-[#A88464] rounded-full animate-pulse shadow-[0_0_8px_rgba(168,132,100,0.8)]"></span>
                                     <span className="text-[#A88464] font-bold">// System Diagnostic: Active</span>
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
                                 <div className="pl-3 opacity-70 tracking-widest">// Precision: 99.98%</div>
                             </div>
                             <h3 className="text-4xl serif text-white italic mb-2 drop-shadow-2xl">The Gentry Case</h3>
-                            <p className="text-stone-500 text-[10px] leading-relaxed uppercase tracking-[0.3em] font-bold">
+                            <p className="text-zinc-400 text-[10px] leading-relaxed uppercase tracking-[0.3em] font-bold">
                                 Reconstructed in 14.2 seconds.<br />
                                 6,402 Documents Synthesized.
                             </p>

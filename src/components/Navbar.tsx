@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="font-sans text-[10px] text-zinc-500 hover:text-white uppercase tracking-[0.2em] transition-all relative group py-2"
+                                className="font-sans text-[10px] text-zinc-300 hover:text-white uppercase tracking-[0.2em] transition-all relative group py-2"
                             >
                                 {link.name}
                                 <span className="absolute bottom-0 left-0 w-full h-px bg-[#A88464] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right group-hover:origin-left"></span>

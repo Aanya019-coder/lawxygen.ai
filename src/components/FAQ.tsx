@@ -6,7 +6,7 @@ const FAQ: React.FC = () => {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-20">
                     <h2 className="text-5xl font-bold text-white serif mb-4">Inquiries</h2>
-                    <p className="text-stone-500 italic">Disclosures and procedural clarifications.</p>
+                    <p className="text-zinc-400 italic">Disclosures and procedural clarifications.</p>
                 </div>
 
                 <div className="space-y-4">
@@ -24,7 +24,7 @@ const FAQ: React.FC = () => {
                                     </span>
                                     <span className="text-zinc-700 group-hover:text-[#A88464] transition-colors">+</span>
                                 </summary>
-                                <div className="p-8 pt-0 text-stone-500 text-sm leading-relaxed border-t border-zinc-900/50">
+                                <div className="p-8 pt-0 text-stone-400 text-sm leading-relaxed border-t border-zinc-900/50">
                                     {item.a}
                                 </div>
                             </details>

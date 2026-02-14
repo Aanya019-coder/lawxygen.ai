@@ -48,7 +48,7 @@ const App: React.FC = () => {
                             The Future is <br />
                             <span className="italic gold-gradient">Lawxygen.</span>
                         </h2>
-                        <p className="text-stone-500 mb-16 text-lg max-w-xl mx-auto font-light italic leading-relaxed">
+                        <p className="text-stone-300 mb-16 text-lg max-w-xl mx-auto font-light italic leading-relaxed">
                             Don't merely adapt to the new legal landscape. Shape it with the definitive intelligence engine.
                         </p>
                         <button className="px-20 py-8 bg-white hover:bg-zinc-200 text-black text-xs font-black rounded-sm transition-all transform hover:scale-105 shadow-2xl shadow-white/5 tracking-[0.4em] uppercase">

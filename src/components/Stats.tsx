@@ -18,10 +18,10 @@ const Stats: React.FC = () => {
                             <div className="text-4xl md:text-6xl font-bold text-white serif mb-2 group-hover:scale-110 transition-transform">
                                 {stat.value}
                             </div>
-                            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 mb-1">
+                            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-300 mb-1">
                                 {stat.label}
                             </div>
-                            <div className="text-[10px] text-zinc-600 italic">
+                            <div className="text-[10px] text-zinc-400 italic">
                                 {stat.suffix}
                             </div>
                         </div>
