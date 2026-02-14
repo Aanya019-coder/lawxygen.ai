@@ -46,7 +46,7 @@ const App: React.FC = () => {
                         <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-12 block font-black">Final Engagement</span>
                         <h2 className="text-6xl md:text-8xl font-bold text-white serif mb-12 leading-none">
                             The Future is <br />
-                            <span className="italic gold-gradient">Oxygenated.</span>
+                            <span className="italic gold-gradient">Lawxygen.</span>
                         </h2>
                         <p className="text-stone-500 mb-16 text-lg max-w-xl mx-auto font-light italic leading-relaxed">
                             Don't merely adapt to the new legal landscape. Shape it with the definitive intelligence engine.
