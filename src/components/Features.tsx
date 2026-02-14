@@ -27,7 +27,7 @@ const features: Feature[] = [
 
 const Features: React.FC = () => {
     return (
-        <section id="features" className="py-48 neural-bg group relative overflow-hidden">
+        <section id="features" className="py-24 neural-bg group relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-[#A88464]/5 blur-[150px] pointer-events-none"></div>
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">

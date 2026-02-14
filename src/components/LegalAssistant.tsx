@@ -33,7 +33,7 @@ const LegalAssistant: React.FC = () => {
     };
 
     return (
-        <section id="assistant" className="py-48 bg-black relative">
+        <section id="assistant" className="py-24 bg-black relative">
             <div className="max-w-[1400px] mx-auto px-4 md:px-12 grid lg:grid-cols-12 gap-16">
 
                 <div className="lg:col-span-4 self-center group">

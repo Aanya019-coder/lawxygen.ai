@@ -9,7 +9,7 @@ const Stats: React.FC = () => {
     ];
 
     return (
-        <section className="py-32 bg-black border-y border-zinc-900 border-x-0 relative">
+        <section className="py-16 bg-black border-y border-zinc-900 border-x-0 relative">
             <div className="absolute inset-0 bg-stone-900/5 -z-10"></div>
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">

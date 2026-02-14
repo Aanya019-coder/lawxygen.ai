@@ -8,7 +8,7 @@ const Pricing: React.FC = () => {
     ];
 
     return (
-        <section id="pricing" className="py-48 bg-black relative">
+        <section id="pricing" className="py-24 bg-black relative">
             <div className="max-w-[1400px] mx-auto px-4 md:px-12">
                 <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="max-w-2xl translate-y-4 opacity-0 animate-[reveal_1s_ease-out_forwards]">

@@ -3,7 +3,7 @@ import { Icons } from '../constants';
 
 const ProblemSolution: React.FC = () => {
     return (
-        <section id="problem" className="py-48 bg-black relative">
+        <section id="problem" className="py-24 bg-black relative">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
                 <div className="flex flex-col lg:flex-row items-stretch gap-px bg-zinc-900 border border-[#A88464]/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                     {/* THE ANALOG ERA */}

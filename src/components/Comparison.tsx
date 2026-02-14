@@ -9,7 +9,7 @@ const Comparison: React.FC = () => {
     ];
 
     return (
-        <section id="comparison" className="py-48 bg-black relative overflow-hidden">
+        <section id="comparison" className="py-24 bg-black relative overflow-hidden">
             <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#A88464]/5 blur-[120px] pointer-events-none"></div>
 
             <div className="max-w-[1400px] mx-auto px-4 md:px-12">
