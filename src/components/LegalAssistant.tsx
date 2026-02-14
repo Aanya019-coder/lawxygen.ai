@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { generateLegalResponse } from '../services/gemini';
 import { Message } from '../types';
 
+import SpinningNumbers from './SpinningNumbers';
+
 const LegalAssistant: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>([
         { role: 'assistant', content: "SYSTEM INITIALIZED. LAWXYGEN CORE ACTIVE. READY FOR INQUIRY." }
@@ -33,8 +35,11 @@ const LegalAssistant: React.FC = () => {
     };
 
     return (
-        <section id="assistant" className="py-24 bg-black relative">
-            <div className="max-w-[1400px] mx-auto px-4 md:px-12 grid lg:grid-cols-12 gap-16">
+        <section id="assistant" className="py-24 bg-black relative overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+                <SpinningNumbers />
+            </div>
+            <div className="max-w-[1400px] mx-auto px-4 md:px-12 grid lg:grid-cols-12 gap-16 relative z-10">
 
                 <div className="lg:col-span-4 self-center group">
                     <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest mb-6 block font-bold transition-all group-hover:text-[#A88464]">Protocol Lab 01</span>

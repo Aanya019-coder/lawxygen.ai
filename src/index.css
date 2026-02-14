@@ -212,3 +212,56 @@
     stroke-dashoffset: 0;
   }
 }
+
+/* Spinning Numbers Background Effect */
+.spinning-number {
+  position: relative;
+  font-size: 0.5em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spinning-number .wheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  animation: spinning-number-spin var(--t) linear infinite var(--r1);
+}
+
+@keyframes spinning-number-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.spinning-number .number {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateY(calc(var(--l) * -1)) scale(var(--s));
+  font-family: inherit;
+  font-weight: 900;
+}
+
+.spinning-number .number::before {
+  content: "1";
+  --z: 1.9;
+  --r: normal;
+  display: block;
+  animation: spinning-number-changing calc(var(--t) * var(--z)) calc(-1 * var(--z) * var(--t) * var(--i) / var(--m) - 60s) linear infinite var(--r);
+}
+
+@keyframes spinning-number-changing {
+
+  0%,
+  100% {
+    content: "1";
+  }
+
+  50% {
+    content: "0";
+  }
+}
