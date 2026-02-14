@@ -5,14 +5,14 @@ const Stats: React.FC = () => {
         { label: "Research Time Reduction", value: "92%", suffix: "lower" },
         { label: "Cases Processed Daily", value: "4.8M", suffix: "global" },
         { label: "Citation Accuracy", value: "100%", suffix: "verified" },
-        { label: "Average ROI", value: "14x", suffix: "annual" },
+        { label: "Average ROI", value: "14X", suffix: "annual" },
     ];
 
     return (
-        <section className="py-16 bg-black border-y border-zinc-900 border-x-0 relative">
+        <section className="py-16 bg-black border-y border-zinc-900 border-x-0 relative px-4 sm:px-6 lg:px-12">
             <div className="absolute inset-0 bg-stone-900/5 -z-10"></div>
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">
+            <div className="max-w-[1400px] mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                     {stats.map((stat, i) => (
                         <div key={i} className="group">
                             <div className="text-4xl md:text-6xl font-bold text-white serif mb-2 group-hover:scale-110 transition-transform">
