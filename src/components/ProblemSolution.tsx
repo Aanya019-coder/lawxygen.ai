@@ -1,5 +1,5 @@
-import React from 'react';
 import { Icons } from '../constants';
+import LogicCore from './LogicCore';
 
 const ProblemSolution: React.FC = () => {
     return (
@@ -32,6 +32,11 @@ const ProblemSolution: React.FC = () => {
 
                     {/* THE NEURAL ERA */}
                     <div className="flex-1 p-16 md:p-24 bg-black relative overflow-hidden">
+                        {/* Logic Core Background */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.15] scale-[1.5] md:scale-[2.5]">
+                            <LogicCore />
+                        </div>
+
                         {/* Subtle Intelligence Glow */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#A88464]/5 blur-[120px]"></div>
 
