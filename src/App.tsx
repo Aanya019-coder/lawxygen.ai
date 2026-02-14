@@ -43,7 +43,7 @@ const App: React.FC = () => {
                 {/* Final CTA — Architectural Focus */}
                 <section className="py-32 bg-black relative overflow-hidden border-t border-zinc-900">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <span className="mono text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-12 block font-black">Final Engagement</span>
+                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-12 block font-black">Final Engagement</span>
                         <h2 className="text-6xl md:text-8xl font-bold text-white serif mb-12 leading-none">
                             The Future is <br />
                             <span className="italic gold-gradient">Oxygenated.</span>

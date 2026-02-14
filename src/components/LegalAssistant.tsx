@@ -37,18 +37,18 @@ const LegalAssistant: React.FC = () => {
             <div className="max-w-[1400px] mx-auto px-4 md:px-12 grid lg:grid-cols-12 gap-16">
 
                 <div className="lg:col-span-4 self-center group">
-                    <span className="mono text-[10px] text-zinc-500 uppercase tracking-widest mb-6 block font-bold transition-all group-hover:text-[#A88464]">Protocol Lab 01</span>
+                    <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-widest mb-6 block font-bold transition-all group-hover:text-[#A88464]">Protocol Lab 01</span>
                     <h2 className="text-5xl font-bold text-white serif leading-none mb-8 transition-transform group-hover:translate-x-2 duration-700">Interface with <br /><span className="italic gold-gradient">Pure Logic.</span></h2>
                     <p className="text-stone-500 text-sm leading-relaxed mb-8 border-l border-[#A88464]/30 pl-6 group-hover:border-[#A88464] transition-colors">
                         Access the secure sandbox. Every interaction is encrypted with end-to-end proprietary firm-level protocols. Ask about strategy, precedent, or procedural mechanics.
                     </p>
                     <div className="grid grid-cols-2 gap-8">
                         <div className="text-left group/item">
-                            <span className="block text-white font-mono text-2xl font-bold transition-all group-hover/item:text-[#C5A059] group-hover/item:translate-x-1">0.02s</span>
+                            <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-[#C5A059] group-hover/item:translate-x-1">0.02s</span>
                             <span className="text-[10px] uppercase text-zinc-600 tracking-widest">Delay</span>
                         </div>
                         <div className="text-left group/item">
-                            <span className="block text-white font-mono text-2xl font-bold transition-all group-hover/item:text-[#C5A059] group-hover/item:translate-x-1">256-Bit</span>
+                            <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-[#C5A059] group-hover/item:translate-x-1">256-Bit</span>
                             <span className="text-[10px] uppercase text-zinc-600 tracking-widest">Encryption</span>
                         </div>
                     </div>
@@ -60,11 +60,11 @@ const LegalAssistant: React.FC = () => {
                         <div className="p-4 border-b border-zinc-900 flex items-center justify-between bg-black/40 px-8">
                             <div className="flex items-center space-x-4">
                                 <div className="w-2 h-2 rounded-full bg-[#A88464] shadow-[0_0_15px_rgba(168,132,100,0.8)] animate-pulse"></div>
-                                <span className="mono text-[11px] text-zinc-300 font-bold uppercase tracking-[0.2em]">Neural Path Active</span>
+                                <span className="font-sans text-[11px] text-zinc-300 font-bold uppercase tracking-[0.2em]">Neural Path Active</span>
                             </div>
                             <div className="hidden sm:flex space-x-6">
-                                <span className="mono text-[9px] text-zinc-600 uppercase animate-pulse">Latency: 12ms</span>
-                                <span className="mono text-[9px] text-zinc-600 uppercase opacity-50">Core: Law-01</span>
+                                <span className="font-sans text-[9px] text-zinc-600 uppercase animate-pulse">Latency: 12ms</span>
+                                <span className="font-sans text-[9px] text-zinc-600 uppercase opacity-50">Core: Law-01</span>
                             </div>
                         </div>
 
@@ -76,10 +76,10 @@ const LegalAssistant: React.FC = () => {
                             {messages.map((m, i) => (
                                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} animate-[reveal_0.5s_ease-out_forwards]`}>
                                     <div className={`max-w-[85%] relative ${m.role === 'user' ? 'text-right' : 'text-left'}`}>
-                                        <span className="mono text-[8px] text-stone-600 uppercase tracking-widest mb-2 block font-bold transition-colors hover:text-[#A88464] cursor-default">
+                                        <span className="font-sans text-[8px] text-stone-600 uppercase tracking-widest mb-2 block font-bold transition-colors hover:text-[#A88464] cursor-default">
                                             {m.role === 'user' ? 'AUTH_PARTNER_01' : 'CORE_ENGINE_ALPHA'}
                                         </span>
-                                        <div className={`p-6 rounded-sm text-sm leading-relaxed mono transition-all duration-500 hover:scale-[1.01] ${m.role === 'user'
+                                        <div className={`p-6 rounded-sm text-sm leading-relaxed font-sans transition-all duration-500 hover:scale-[1.01] ${m.role === 'user'
                                             ? 'bg-[#A88464]/10 text-white border-r-2 border-[#A88464] shadow-[0_0_20px_rgba(168,132,100,0.05)]'
                                             : 'text-stone-300 border-l-2 border-zinc-800 bg-white/5 shadow-[0_0_20px_rgba(255,255,255,0.02)]'
                                             }`}>
@@ -92,7 +92,7 @@ const LegalAssistant: React.FC = () => {
                             ))}
                             {isLoading && (
                                 <div className="flex justify-start">
-                                    <div className="mono text-[#C5A059] text-xs animate-pulse tracking-widest flex items-center">
+                                    <div className="font-sans text-[#C5A059] text-xs animate-pulse tracking-widest flex items-center">
                                         <span className="mr-2">[</span>
                                         <span className="typing-animation">ANALYZING_CORE_DATABASES...</span>
                                         <span className="ml-2">]</span>
@@ -110,7 +110,7 @@ const LegalAssistant: React.FC = () => {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     placeholder="INPUT_LEGAL_QUERY_HERE_..."
-                                    className="w-full bg-black/50 border border-zinc-900 rounded-sm px-6 py-5 text-stone-100 mono text-xs focus:outline-none focus:border-[#A88464]/50 transition-all duration-500 pr-16 placeholder:text-zinc-800 focus:shadow-[0_0_15px_rgba(168,132,100,0.1)]"
+                                    className="w-full bg-black/50 border border-zinc-900 rounded-sm px-6 py-5 text-stone-100 font-sans text-xs focus:outline-none focus:border-[#A88464]/50 transition-all duration-500 pr-16 placeholder:text-zinc-800 focus:shadow-[0_0_15px_rgba(168,132,100,0.1)]"
                                 />
                                 <button
                                     type="submit"

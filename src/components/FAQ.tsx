@@ -19,7 +19,7 @@ const FAQ: React.FC = () => {
                             <details className="w-full">
                                 <summary className="p-8 cursor-pointer flex justify-between items-center list-none outline-none">
                                     <span className="text-white font-bold serif text-lg flex items-center">
-                                        <span className="text-[#A88464] mr-4 mono text-xs font-black select-none">Q.</span>
+                                        <span className="text-[#A88464] mr-4 font-sans text-xs font-black select-none">Q.</span>
                                         {item.q}
                                     </span>
                                     <span className="text-zinc-700 group-hover:text-[#A88464] transition-colors">+</span>

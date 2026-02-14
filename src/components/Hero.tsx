@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
                         </div>
 
                         <div className="p-8 h-full flex flex-col justify-end relative z-20">
-                            <div className="mono text-[10px] text-stone-500 mb-4 tracking-tighter leading-none uppercase space-y-1">
+                            <div className="font-sans text-[10px] text-stone-500 mb-4 tracking-tighter leading-none uppercase space-y-1">
                                 <div className="flex items-center space-x-2">
                                     <span className="w-1.5 h-1.5 bg-[#A88464] rounded-full animate-pulse shadow-[0_0_8px_rgba(168,132,100,0.8)]"></span>
                                     <span className="text-[#A88464] font-bold">// System Diagnostic: Active</span>

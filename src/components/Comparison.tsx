@@ -15,7 +15,7 @@ const Comparison: React.FC = () => {
             <div className="max-w-[1400px] mx-auto px-4 md:px-12">
                 <div className="grid lg:grid-cols-2 gap-32 items-center">
                     <div>
-                        <span className="mono text-[10px] text-[#A88464] uppercase tracking-[0.4em] mb-10 block font-bold">Comparative Logic</span>
+                        <span className="font-sans text-[10px] text-[#A88464] uppercase tracking-[0.4em] mb-10 block font-bold">Comparative Logic</span>
                         <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-12">Systemic <br /><span className="italic gold-gradient">Superiority.</span></h2>
                         <p className="text-stone-500 text-lg leading-relaxed mb-16 font-light max-w-xl">
                             In the high-stakes theater of law, the gap between "fast" and "instant" is the difference between a settlement and a victory. Lawxygen removes the friction of history.
@@ -29,7 +29,7 @@ const Comparison: React.FC = () => {
                                             <span className="text-xs uppercase text-stone-400 font-bold tracking-widest transition-colors group-hover/bar:text-white">Legacy: {item.legacy}</span>
                                         </div>
                                         <div className="text-right">
-                                            <span className="mono text-[10px] text-[#A88464] font-black tracking-widest mb-1 block">+{item.improvement}</span>
+                                            <span className="font-sans text-[10px] text-[#A88464] font-black tracking-widest mb-1 block">+{item.improvement}</span>
                                             <span className="text-xs text-white uppercase font-bold tracking-[0.2em]">{item.oxy}</span>
                                         </div>
                                     </div>

@@ -33,7 +33,7 @@ const Features: React.FC = () => {
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12">
                     <div className="max-w-3xl">
-                        <span className="mono text-[10px] text-[#A88464] uppercase tracking-[0.4em] mb-8 block font-bold">Core Capabilities</span>
+                        <span className="font-sans text-[10px] text-[#A88464] uppercase tracking-[0.4em] mb-8 block font-bold">Core Capabilities</span>
                         <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">Legal Intelligence <br /><span className="italic gold-gradient">Reimagined.</span></h2>
                     </div>
                     <p className="text-stone-500 text-lg max-w-md italic border-l border-[#A88464]/20 pl-8 leading-relaxed font-light">

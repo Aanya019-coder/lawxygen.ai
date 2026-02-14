@@ -31,10 +31,6 @@
   @apply font-serif;
 }
 
-.mono {
-  @apply font-mono;
-}
-
 .glass {
   background: rgba(12, 10, 9, 0.4);
   backdrop-filter: blur(24px) saturate(180%);
@@ -170,7 +166,7 @@
 }
 
 .loading-text {
-  font-family: var(--font-mono);
+  @apply font-sans;
   font-size: 10px;
   fill: #A88464;
   text-transform: uppercase;
