@@ -4,6 +4,7 @@ export interface Feature {
     title: string;
     description: string;
     icon: ReactNode;
+    bgPattern?: ReactNode;
 }
 
 export interface Message {

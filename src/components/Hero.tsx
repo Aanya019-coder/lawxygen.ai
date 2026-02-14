@@ -3,11 +3,14 @@ import React from 'react';
 const Hero: React.FC = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-4 sm:px-6 lg:px-12 overflow-hidden select-none">
+            {/* Flowing Waves Background */}
+            <div className="flowing-waves"></div>
+
             {/* Background Texture - Refined White/Silver */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:24px_24px]"></div>
-                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-zinc-800/20 blur-[180px] rounded-full animate-pulse duration-[10s]"></div>
-                <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[60%] bg-zinc-900/40 blur-[150px] rounded-full animate-pulse duration-[8s] delay-1000"></div>
+                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-zinc-800/20 blur-[180px] rounded-full glow-pulse"></div>
+                <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[60%] bg-zinc-900/40 blur-[150px] rounded-full glow-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
             <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-12 gap-20 items-center relative z-10">

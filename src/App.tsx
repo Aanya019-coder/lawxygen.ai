@@ -8,6 +8,7 @@ import Comparison from './components/Comparison';
 import LegalAssistant from './components/LegalAssistant';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -40,27 +41,7 @@ const App: React.FC = () => {
 
                 <FAQ />
 
-                {/* Final CTA — Architectural Focus */}
-                <section className="py-32 bg-black relative overflow-hidden border-t border-zinc-900">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-12 block font-black">Final Engagement</span>
-                        <h2 className="text-6xl md:text-8xl font-bold text-white serif mb-12 leading-none">
-                            The Future is <br />
-                            <span className="italic gold-gradient">Lawxygen.</span>
-                        </h2>
-                        <p className="text-stone-300 mb-16 text-lg max-w-xl mx-auto font-light italic leading-relaxed">
-                            Don't merely adapt to the new legal landscape. Shape it with the definitive intelligence engine.
-                        </p>
-                        <button className="px-20 py-8 bg-white hover:bg-zinc-200 text-black text-xs font-black rounded-sm transition-all transform hover:scale-105 shadow-2xl shadow-white/5 tracking-[0.4em] uppercase">
-                            Schedule Private Briefing
-                        </button>
-                    </div>
-
-                    {/* Abstract Geometric Background */}
-                    <div className="absolute inset-0 opacity-[0.02] pointer-events-none select-none overflow-hidden">
-                        <div className="text-[20rem] font-black serif text-white absolute -bottom-32 -left-32 transform -rotate-12">LAW</div>
-                    </div>
-                </section>
+                <CTA />
             </main>
 
             <Footer />
