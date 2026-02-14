@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --espresso: #0c0a0a;
+  --cognac: #A88464;
+  --oak: #574636;
+  --gold: #C5A059;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+    background-color: var(--espresso);
+    color: #f5f5f5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+    color: #ffffff;
+  }
+}
+
+.serif {
+  @apply font-serif;
+}
+
+.mono {
+  @apply font-mono;
+}
+
+.glass {
+  background: rgba(12, 10, 9, 0.4);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(168, 132, 100, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-strong {
+  background: rgba(12, 10, 9, 0.6);
+  backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(168, 132, 100, 0.15);
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #C5A059 50%, #A88464 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.neural-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(168, 132, 100, 0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--espresso);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--oak);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #C5A059;
+  animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #C5A059;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* UI Loader - Hero Visual */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.grid-line {
+  stroke: rgba(168, 132, 100, 0.08);
+  stroke-width: 0.5;
+}
+
+.browser-frame {
+  fill: #0c0a0a;
+  stroke: rgba(168, 132, 100, 0.2);
+  stroke-width: 1;
+}
+
+.browser-top {
+  fill: #1a1a1a;
+}
+
+.loading-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: #A88464;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.skeleton {
+  fill: #1c1917;
+  rx: 2;
+  ry: 2;
+  animation: pulse-skeleton 2s ease-in-out infinite;
+}
+
+@keyframes pulse-skeleton {
+
+  0%,
+  100% {
+    fill: #1c1917;
+  }
+
+  50% {
+    fill: #262626;
+  }
+}
+
+.trace-flow {
+  stroke-width: 1.5;
+  fill: none;
+  stroke-dasharray: 100 800;
+  stroke-dashoffset: 900;
+  animation: flow 4s linear infinite;
+  opacity: 0.8;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px var(--cognac));
+}
+
+@keyframes flow {
+  from {
+    stroke-dashoffset: 900;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
