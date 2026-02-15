@@ -17,8 +17,8 @@ const Navbar: React.FC = () => {
 
                     <div className="hidden lg:flex items-center space-x-12">
                         {[
-                            { name: 'Workflow', href: '#problem' },
-                            { name: 'Comparison', href: '#comparison' },
+                            { name: 'How It Works', href: '#problem' },
+                            { name: 'Reality', href: '#comparison' },
                             { name: 'Demo', href: '#assistant' },
                             { name: 'Pricing', href: '#pricing' }
                         ].map((link) => (

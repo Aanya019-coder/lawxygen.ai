@@ -4,24 +4,33 @@ import { Feature } from '../types';
 
 const features: Feature[] = [
     {
-        title: "Instant Research",
-        description: "Stop drowning in search results. Ask Lawxygen a question the way you'd brief a junior associate, and get precise, citable answers.",
+        title: "Legal Research",
+        description: "Search Westlaw, LexisNexis, and public legal databases. Filter by jurisdiction, date, court level. Get cases ranked by relevance to your query. See key excerpts from each case and click through to read full opinions.",
         icon: <Icons.Brain />,
         bgPattern: (
             <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                {/* Neural Network / Data Flow - Radial gradient simulating a burst of data */}
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_70%)] blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_45%,rgba(255,255,255,0.03)_50%,transparent_55%)] bg-[length:20px_20px]"></div>
             </div>
         )
     },
     {
-        title: "Document Synthesis",
-        description: "Create first drafts of contracts, motions, and briefs using pre-vetted legal architectures. Edit with confidence knowing every clause is supported by case law.",
+        title: "Citation Verification",
+        description: "Paste in your brief or memo. Lawxygen will verify each citation format, check if cases have been overruled, show treatment history, and flag any broken or incorrect citations. Catches errors before you file.",
+        icon: <Icons.Shield />,
+        bgPattern: (
+            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,rgba(255,255,255,0.05)_50%,transparent_100%)]"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[linear-gradient(to_top,rgba(255,255,255,0.05),transparent)]"></div>
+            </div>
+        )
+    },
+    {
+        title: "Case Summaries",
+        description: "Understand cases faster. For any case, get a one-paragraph summary of facts, key legal holdings, how it has been cited by other courts, and related cases you might want to check.",
         icon: <Icons.FileText />,
         bgPattern: (
             <div className="absolute inset-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700">
-                {/* Blueprint / Grid - Structured grid lines representing document assembly */}
                 <div className="absolute inset-0" style={{
                     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
                     backgroundSize: '40px 40px'
@@ -30,24 +39,11 @@ const features: Feature[] = [
         )
     },
     {
-        title: "Risk Prediction",
-        description: "Analyze historical data and judicial patterns to predict litigation outcomes with 89% accuracy. Know your strengths, anticipate weaknesses.",
-        icon: <Icons.Shield />,
-        bgPattern: (
-            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                {/* Probability / Analytics - Gradient wave representing statistical curves */}
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,rgba(255,255,255,0.05)_50%,transparent_100%)]"></div>
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[linear-gradient(to_top,rgba(255,255,255,0.05),transparent)]"></div>
-            </div>
-        )
-    },
-    {
-        title: "Authority Mapping",
-        description: "See how cases connect across decades. Identify the pivotal precedent that anchors your argument and trace its influence through the legal system.",
+        title: "Document Templates",
+        description: "Start from proven structures. Access templates for Motions to dismiss, Summary judgment motions, Discovery requests, and Standard contracts. These are starting points—customize them for your case.",
         icon: <Icons.Gavel />,
         bgPattern: (
             <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                {/* Network / Nodes - Scattered dots representing case connections */}
                 <div className="absolute inset-0" style={{
                     backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px)`,
                     backgroundSize: '24px 24px'
@@ -67,11 +63,8 @@ const Features: React.FC = () => {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12">
                     <div className="max-w-3xl">
                         <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-8 block font-bold">Core Capabilities</span>
-                        <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">Legal Intelligence <br /><span className="italic gold-gradient">Built for Your Practice.</span></h2>
+                        <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">What Lawxygen <br /><span className="italic gold-gradient">Actually Does.</span></h2>
                     </div>
-                    <p className="text-stone-300 text-lg max-w-md italic border-l border-white/20 pl-8 leading-relaxed font-light">
-                        We've distilled decades of legal expertise into an AI assistant that understands context, not just keywords.
-                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 group/container">

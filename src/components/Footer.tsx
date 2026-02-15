@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
         <footer className="bg-black border-t border-zinc-900 pt-32 pb-20">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-16 mb-24">
-                    <div className="col-span-1 md:col-span-1">
+                    <div className="col-span-1 md:col-span-3 lg:col-span-2">
                         <div className="flex items-center space-x-3 mb-8 group cursor-default">
                             <div className="p-2 rounded-sm bg-white/5 text-white border border-white/10 group-hover:border-white/40 transition-all duration-700">
                                 <Icons.Scale />
@@ -16,23 +16,23 @@ const Footer: React.FC = () => {
                             </span>
                         </div>
                         <p className="text-zinc-500 text-base leading-relaxed font-light max-w-xs transition-colors hover:text-zinc-400">
-                            Empowering attorneys with intelligent legal research and drafting tools.
+                            Lawxygen is a legal research tool. It does not provide legal advice. Users are responsible for verifying all information before use in legal proceedings.
                         </p>
                     </div>
 
                     <div>
-                        <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Platform</h4>
+                        <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Product</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            {['Legal Research', 'Case Analytics', 'Document Drafting', 'API Access'].map(link => (
+                            {['How It Works', 'Pricing', "What It Can't Do", 'Integrations'].map(link => (
                                 <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
                             ))}
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Resources</h4>
+                        <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Support</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            {['Blog & Insights', 'Case Studies', 'Help Center', 'Webinars'].map(link => (
+                            {['Help Center', 'Contact Us', 'Report a Problem', 'Feature Requests'].map(link => (
                                 <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
                             ))}
                         </ul>
@@ -41,16 +41,7 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Company</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            {['About Us', 'Careers', 'Ethics & Responsible AI', 'Contact Support'].map(link => (
-                                <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Legal</h4>
-                        <ul className="space-y-4 text-sm text-zinc-500">
-                            {['Privacy Policy', 'Terms of Service', 'Data Security', 'Security Audit Report'].map(link => (
+                            {['About Us', 'Jobs', 'Privacy Policy', 'Terms of Service'].map(link => (
                                 <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
                             ))}
                         </ul>
@@ -62,7 +53,6 @@ const Footer: React.FC = () => {
                     <div className="flex space-x-10">
                         <a href="#" className="hover:text-white transition-all">LinkedIn</a>
                         <a href="#" className="hover:text-white transition-all">Twitter</a>
-                        <a href="#" className="hover:text-white transition-all text-zinc-400">Legal Tech Blog</a>
                     </div>
                 </div>
             </div>

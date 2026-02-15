@@ -3,24 +3,24 @@ import React from 'react';
 const Stats: React.FC = () => {
     const stats = [
         {
-            value: "92%",
-            label: "Research Time Saved",
-            description: "Average time reduction vs. traditional legal research methods"
+            value: "5 Hours",
+            label: "Average Time Saved",
+            description: "Per case (research phase alone)"
         },
         {
-            value: "98%",
-            label: "Citation Accuracy",
-            description: "Verified precedent matching across all major jurisdictions"
+            value: "50,000+",
+            label: "Cases Researched",
+            description: "By attorneys using Lawxygen"
         },
         {
-            value: "8 Min",
-            label: "Average Synthesis Time",
-            description: "From question to actionable insight (down from 4-6 hours)"
+            value: "15 Seconds",
+            label: "Average Response Time",
+            description: "From question to relevant results"
         },
         {
-            value: "24/7",
-            label: "Always Ready",
-            description: "Real-time access to legal intelligence when you need it most"
+            value: "$299",
+            label: "Starting Price",
+            description: "Less than 2 billable hours per month"
         },
     ];
 

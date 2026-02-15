@@ -1,14 +1,29 @@
 import React from 'react';
 import { Icons } from '../constants';
-import LogicCore from './LogicCore';
 
 const ProblemSolution: React.FC = () => {
     const workflowStages = [
-        { name: "Intake", subtitle: "Capture Every Detail", icon: <Icons.Brain /> },
-        { name: "Research", subtitle: "Find What Matters", icon: <Icons.FileText /> },
-        { name: "Strategy", subtitle: "Know Your Position", icon: <Icons.Shield /> },
-        { name: "Drafting", subtitle: "Generate First Drafts", icon: <Icons.Gavel /> },
-        { name: "Execution", subtitle: "Stay on Track", icon: <Icons.Scale /> },
+        { name: "Step 1", subtitle: "Ask Your Question", icon: <Icons.Brain />, description: "Type what you're looking for: \"breach of contract cases in California involving software licenses\"" },
+        { name: "Step 2", subtitle: "Get Relevant Results", icon: <Icons.FileText />, description: "Lawxygen searches and shows you the most relevant cases, with the key points extracted." },
+        { name: "Step 3", subtitle: "Read and Cite", icon: <Icons.Gavel />, description: "Click any case to see the full text. All citations are properly formatted and verified." },
+    ];
+
+    const users = [
+        {
+            title: "Solo Practitioners",
+            description: "When you can't afford a research assistant",
+            quote: "\"I handle everything myself—client calls, court appearances, research. Lawxygen cuts my research time in half, which means I can take on more clients without working 80-hour weeks.\""
+        },
+        {
+            title: "Small Firms (2-10 attorneys)",
+            description: "When you need consistent research quality",
+            quote: "\"Before Lawxygen, research quality varied depending on which associate did it. Now everyone starts from the same high-quality database search.\""
+        },
+        {
+            title: "Mid-Size Firms",
+            description: "When you want to reduce associate research hours",
+            quote: "\"Our associates use Lawxygen for the initial research phase. They find relevant cases faster, which means less time billed to clients and fewer revision rounds.\""
+        }
     ];
 
     return (
@@ -17,12 +32,12 @@ const ProblemSolution: React.FC = () => {
                 {/* Workflow Process Section */}
                 <div className="mb-32">
                     <div className="text-center mb-16">
-                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">Not a Tool. A Complete Legal Workflow.</span>
+                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">How It Works</span>
                         <h2 className="text-4xl md:text-6xl font-bold text-white serif leading-none mb-4">
-                            Every Phase of Your Case. <span className="italic gold-gradient">One Intelligent Platform.</span>
+                            Simple <span className="italic gold-gradient">Legal Research.</span>
                         </h2>
                         <p className="text-zinc-400 text-sm max-w-2xl mx-auto mt-6">
-                            Lawxygen integrates seamlessly into your practice, from client intake to final brief. Stop switching between tools. Start working smarter.
+                            That's it. No complex queries. No Boolean operators unless you want them.
                         </p>
                     </div>
 
@@ -31,7 +46,7 @@ const ProblemSolution: React.FC = () => {
                         {/* Connection Line */}
                         <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2 hidden lg:block"></div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                             {workflowStages.map((stage, idx) => (
                                 <div key={idx} className="group relative">
                                     {/* Connector Dot */}
@@ -44,7 +59,7 @@ const ProblemSolution: React.FC = () => {
                                         </div>
                                     )}
 
-                                    <div className="glass border border-white/5 rounded-sm p-8 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden group/card">
+                                    <div className="glass border border-white/5 rounded-sm p-8 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden group/card h-full">
                                         {/* Card Background Pattern */}
                                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_70%)] opacity-0 group-hover/card:opacity-100 transition-opacity"></div>
 
@@ -53,7 +68,8 @@ const ProblemSolution: React.FC = () => {
                                                 {stage.icon}
                                             </div>
                                             <h4 className="text-white font-bold text-lg mb-2 serif">{stage.name}</h4>
-                                            <p className="text-zinc-500 text-xs uppercase tracking-wider">{stage.subtitle}</p>
+                                            <p className="text-zinc-500 text-xs uppercase tracking-wider mb-2">{stage.subtitle}</p>
+                                            <p className="text-zinc-400 text-sm leading-relaxed">{stage.description}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -62,69 +78,28 @@ const ProblemSolution: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Original Problem/Solution Split */}
-                <div className="flex flex-col lg:flex-row items-stretch gap-px bg-zinc-900 border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                    {/* THE ANALOG ERA */}
-                    <div className="flex-1 p-16 md:p-24 bg-neutral-950 relative overflow-hidden group">
-                        <div className="relative z-10">
-                            <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-10 block font-bold">Legacy Systems</span>
-                            <h2 className="text-5xl md:text-6xl font-bold text-zinc-500 serif mb-12 leading-none">The Burden of <br /><span className="italic">Traditional Research.</span></h2>
-                            <ul className="space-y-10">
-                                {[
-                                    { title: "Lost Precedents", desc: "Critical cases buried in siloed databases, discoverable only through exhaustive manual search." },
-                                    { title: "Billable Hour Leakage", desc: "Hours spent on mechanical review that could be spent on strategic thinking." },
-                                    { title: "Human Oversight Risk", desc: "Even the best attorneys can miss details under deadline pressure." },
-                                    { title: "Research Fatigue", desc: "Cognitive overload from managing multiple cases, jurisdictions, and sources simultaneously." }
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start space-x-6 group-hover:opacity-100 opacity-40 transition-all duration-700">
-                                        <span className="text-zinc-600 font-sans text-[10px] pt-1.5 font-bold tracking-widest">0{i + 1}</span>
-                                        <div>
-                                            <h4 className="text-zinc-400 font-bold text-sm mb-2">{item.title}</h4>
-                                            <p className="text-zinc-500 text-sm leading-relaxed font-light">{item.desc}</p>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="absolute bottom-0 right-0 p-12 opacity-[0.03] grayscale select-none text-white transform translate-x-12 translate-y-12 scale-[3]">
-                            <Icons.Scale />
-                        </div>
-                    </div>
+                {/* Who Uses Lawxygen Section */}
+                <div className="bg-zinc-900/30 border border-white/5 p-12 lg:p-24 rounded-sm relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02),transparent_70%)]"></div>
 
-                    {/* THE NEURAL ERA */}
-                    <div className="flex-1 p-16 md:p-24 bg-black relative overflow-hidden">
-                        {/* Logic Core Background */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.15] scale-[1.5] md:scale-[2.5]">
-                            <LogicCore />
+                    <div className="relative z-10">
+                        <div className="text-center mb-16">
+                            <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">Target Audience</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-white serif leading-none mb-12">Who Uses <span className="italic gold-gradient">Lawxygen?</span></h2>
                         </div>
 
-                        {/* Subtle Intelligence Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-zinc-800/10 blur-[120px]"></div>
-
-                        <div className="relative z-10">
-                            <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-[0.4em] mb-10 block font-bold px-4 py-1 border border-white/20 rounded-full w-fit">Lawxygen Protocol</span>
-                            <h2 className="text-5xl md:text-6xl font-bold text-white serif mb-12 leading-none">The Power of <br /><span className="italic gold-gradient">Intelligent Assistance.</span></h2>
-
-                            <div className="space-y-10">
-                                <div className="p-10 rounded-sm glass-strong border border-white/5 border-l-4 border-l-white hover:border-white/20 transition-all duration-500 transform hover:translate-x-2">
-                                    <h4 className="text-white font-bold mb-4 serif text-2xl">Cognitive Mapping</h4>
-                                    <p className="text-stone-300 text-sm leading-relaxed font-light">
-                                        Don't just search—understand. Lawxygen maps legal reasoning across millions of cases to reveal winning arguments.
-                                    </p>
-                                </div>
-                                <div className="grid grid-cols-2 gap-8">
-                                    <div className="p-8 glass border border-white/5 hover:border-white/30 transition-all duration-500 group/item">
-                                        <div className="text-zinc-300 mb-6 transform group-hover/item:scale-110 transition-transform group-hover/item:text-white"><Icons.Brain /></div>
-                                        <span className="text-white font-bold block mb-2 text-xs uppercase tracking-widest">Automated Testing</span>
-                                        <p className="text-[10px] text-zinc-400 leading-relaxed">Stress-test your arguments against counter-precedents.</p>
-                                    </div>
-                                    <div className="p-8 glass border border-white/5 hover:border-white/30 transition-all duration-500 group/item">
-                                        <div className="text-zinc-300 mb-6 transform group-hover/item:scale-110 transition-transform group-hover/item:text-white"><Icons.Shield /></div>
-                                        <span className="text-white font-bold block mb-2 text-xs uppercase tracking-widest">Verified Citations</span>
-                                        <p className="text-[10px] text-zinc-400 leading-relaxed">Every result is traceable, citable, and court-ready.</p>
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            {users.map((user, i) => (
+                                <div key={i} className="group">
+                                    <h3 className="text-2xl text-white font-bold serif mb-2">{user.title}</h3>
+                                    <p className="text-zinc-500 text-xs uppercase tracking-widest mb-6 font-bold">{user.description}</p>
+                                    <div className="border-l-2 border-white/10 pl-6 group-hover:border-white/40 transition-colors">
+                                        <p className="text-zinc-400 text-sm italic leading-relaxed">
+                                            {user.quote}
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import Struggle from './components/Struggle';
 
 const App: React.FC = () => {
     return (
@@ -25,20 +26,29 @@ const App: React.FC = () => {
 
                 <Hero />
 
-                <Stats />
+                {/* Interactive Demo #2 */}
+                <LegalAssistant />
 
+                {/* Paint Current Struggle #4 */}
+                <Struggle />
+
+                {/* How It Works / Transformation #5 */}
                 <ProblemSolution />
 
                 <div className="bg-black">
                     <Features />
                 </div>
 
-                <Comparison />
+                {/* Numbers #6 */}
+                <Stats />
 
-                <LegalAssistant />
-
+                {/* Pricing #7 */}
                 <Pricing />
 
+                {/* Comparison #10 (placed before FAQ/CTA flow) */}
+                <Comparison />
+
+                {/* FAQ #8 */}
                 <FAQ />
 
                 <CTA />
