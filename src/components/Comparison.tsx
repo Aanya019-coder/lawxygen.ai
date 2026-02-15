@@ -2,33 +2,22 @@ import React from 'react';
 
 const Comparison: React.FC = () => {
     const competitors = [
-        {
-            name: "Lawxygen.ai",
-            scope: "Full Lifecycle",
-            contextAwareness: true,
-            evidenceHandling: "Intelligent OCR",
-            strategicGuidance: "Predictive Analytics"
-        },
-        {
-            name: "Traditional Research",
-            scope: "Research Only",
-            contextAwareness: false,
-            evidenceHandling: "Manual Upload",
-            strategicGuidance: "Basic Templates"
-        },
-        {
-            name: "Generic AI Tools",
-            scope: "Drafting Only",
-            contextAwareness: false,
-            evidenceHandling: "Manual Upload",
-            strategicGuidance: "Limited"
-        },
+        { name: "Traditional Research", isPrimary: false },
+        { name: "Generic AI", isPrimary: false },
+        { name: "Lawxygen", isPrimary: true },
+    ];
+
+    const comparisonRows = [
+        { feature: "Legal Accuracy", values: ["Low (Human Error)", "Variable (Hallucinations)", "High (Verified Citations)"] },
+        { feature: "Speed", values: ["Days/Weeks", "Minutes", "Seconds"] },
+        { feature: "Data Privacy", values: ["Secure but Slow", "Risk of Training", "SOC 2 Type II Encrypted"] },
+        { feature: "Cost", values: ["High (Billable Hours)", "Low (Subscription)", "Optimized (Value-Based)"] },
     ];
 
     const metrics = [
-        { label: "Synthesis Latency", legacy: "48+ Hours", oxy: "14 Seconds", improvement: "99%" },
-        { label: "Predictive Precision", legacy: "42%", oxy: "94%", improvement: "2.2x" },
-        { label: "Jurisdictional Depth", legacy: "Manual", oxy: "Global", improvement: "∞" },
+        { label: "Synthesis Speed", legacy: "40 Hours", oxy: "8 Minutes", improvement: "300x" },
+        { label: "Predictive Accuracy", legacy: "65%", oxy: "89%", improvement: "+24%" },
+        { label: "Jurisdictional Coverage", legacy: "Limited", oxy: "50 States + Fed", improvement: "Complete" },
     ];
 
     return (
@@ -39,85 +28,39 @@ const Comparison: React.FC = () => {
                 {/* Competitive Landscape Table */}
                 <div className="mb-32">
                     <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-[0.4em] mb-10 block font-bold">Competitive Landscape</span>
-                    <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-16">Systemic <br /><span className="italic gold-gradient">Superiority.</span></h2>
+                    <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-6">The Advantage of <br /><span className="italic gold-gradient">Intelligence.</span></h2>
+                    <p className="text-zinc-400 text-lg mb-16 max-w-2xl font-light border-l border-white/20 pl-6">
+                        Why leading firms choose Lawxygen over traditional methods and generic AI.
+                    </p>
 
                     <div className="glass-strong border border-white/5 rounded-sm overflow-hidden">
                         {/* Table Header */}
-                        <div className="grid grid-cols-[minmax(200px,1fr)_repeat(3,minmax(150px,1fr))] border-b border-white/10 bg-black/40">
-                            <div className="p-6 border-r border-white/5">
-                                <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Capability</span>
+                        <div className="grid grid-cols-[minmax(150px,1fr)_repeat(3,minmax(120px,1fr))] border-b border-white/10 bg-black/40">
+                            <div className="p-6 border-r border-white/5 flex items-center">
+                                <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Feature</span>
                             </div>
                             {competitors.map((comp, idx) => (
-                                <div key={idx} className={`p-6 text-center ${idx === 0 ? 'border-l-2 border-l-white/30' : ''} ${idx < competitors.length - 1 ? 'border-r border-white/5' : ''}`}>
-                                    <span className={`text-xs uppercase tracking-wider font-bold ${idx === 0 ? 'text-white' : 'text-zinc-400'}`}>
+                                <div key={idx} className={`p-6 text-center flex items-center justify-center ${comp.isPrimary ? 'bg-white/5 border-t-2 border-t-white relative' : ''} ${idx < competitors.length - 1 ? 'border-r border-white/5' : ''}`}>
+                                    <span className={`text-xs uppercase tracking-wider font-bold ${comp.isPrimary ? 'text-white' : 'text-zinc-400'}`}>
                                         {comp.name}
                                     </span>
                                 </div>
                             ))}
                         </div>
 
-                        {/* Scope Row */}
-                        <div className="grid grid-cols-[minmax(200px,1fr)_repeat(3,minmax(150px,1fr))] border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <div className="p-6 border-r border-white/5">
-                                <span className="text-sm text-zinc-300 font-medium">Scope</span>
-                            </div>
-                            {competitors.map((comp, idx) => (
-                                <div key={idx} className={`p-6 text-center ${idx === 0 ? 'border-l-2 border-l-white/30 bg-white/[0.02]' : ''} ${idx < competitors.length - 1 ? 'border-r border-white/5' : ''}`}>
-                                    <span className={`text-xs ${idx === 0 ? 'text-white font-semibold' : 'text-zinc-400'}`}>
-                                        {comp.scope}
-                                    </span>
+                        {/* Table Rows */}
+                        {comparisonRows.map((row, rowIdx) => (
+                            <div key={rowIdx} className="grid grid-cols-[minmax(150px,1fr)_repeat(3,minmax(120px,1fr))] border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                <div className="p-6 border-r border-white/5 flex items-center">
+                                    <span className="text-sm text-zinc-300 font-medium">{row.feature}</span>
                                 </div>
-                            ))}
-                        </div>
-
-                        {/* Context Awareness Row */}
-                        <div className="grid grid-cols-[minmax(200px,1fr)_repeat(3,minmax(150px,1fr))] border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <div className="p-6 border-r border-white/5">
-                                <span className="text-sm text-zinc-300 font-medium">Context Awareness</span>
-                                <p className="text-[10px] text-zinc-500 mt-1">Case Memory (Years+)</p>
+                                {row.values.map((val, colIdx) => (
+                                    <div key={colIdx} className={`p-6 text-center flex items-center justify-center ${competitors[colIdx].isPrimary ? 'bg-white/[0.02] border-x border-white/5 font-semibold text-white' : 'text-zinc-400'} ${colIdx < row.values.length - 1 && !competitors[colIdx].isPrimary ? 'border-r border-white/5' : ''}`}>
+                                        <span className="text-xs leading-relaxed">{val}</span>
+                                    </div>
+                                ))}
                             </div>
-                            {competitors.map((comp, idx) => (
-                                <div key={idx} className={`p-6 flex items-center justify-center ${idx === 0 ? 'border-l-2 border-l-white/30 bg-white/[0.02]' : ''} ${idx < competitors.length - 1 ? 'border-r border-white/5' : ''}`}>
-                                    {comp.contextAwareness ? (
-                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    ) : (
-                                        <svg className="w-5 h-5 text-zinc-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Evidence Handling Row */}
-                        <div className="grid grid-cols-[minmax(200px,1fr)_repeat(3,minmax(150px,1fr))] border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                            <div className="p-6 border-r border-white/5">
-                                <span className="text-sm text-zinc-300 font-medium">Evidence Handling</span>
-                            </div>
-                            {competitors.map((comp, idx) => (
-                                <div key={idx} className={`p-6 text-center ${idx === 0 ? 'border-l-2 border-l-white/30 bg-white/[0.02]' : ''} ${idx < competitors.length - 1 ? 'border-r border-white/5' : ''}`}>
-                                    <span className={`text-xs ${idx === 0 ? 'text-white font-semibold' : 'text-zinc-400'}`}>
-                                        {comp.evidenceHandling}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Strategic Guidance Row */}
-                        <div className="grid grid-cols-[minmax(200px,1fr)_repeat(3,minmax(150px,1fr))] hover:bg-white/[0.02] transition-colors">
-                            <div className="p-6 border-r border-white/5">
-                                <span className="text-sm text-zinc-300 font-medium">Strategic Guidance</span>
-                            </div>
-                            {competitors.map((comp, idx) => (
-                                <div key={idx} className={`p-6 text-center ${idx === 0 ? 'border-l-2 border-l-white/30 bg-white/[0.02]' : ''} ${idx < competitors.length - 1 ? 'border-r border-white/5' : ''}`}>
-                                    <span className={`text-xs ${idx === 0 ? 'text-white font-semibold' : 'text-zinc-400'}`}>
-                                        {comp.strategicGuidance}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+                        ))}
                     </div>
                 </div>
 
@@ -126,7 +69,7 @@ const Comparison: React.FC = () => {
                     <div className="space-y-12">
                         <div>
                             <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">Performance Delta</span>
-                            <h3 className="text-4xl font-bold text-white serif leading-none mb-8">The <span className="italic gold-gradient">Invisible Advantage</span></h3>
+                            <h3 className="text-4xl font-bold text-white serif leading-none mb-8">Quantifiable <span className="italic gold-gradient">Impact.</span></h3>
                         </div>
                         {metrics.map((item, i) => (
                             <div key={i} className="relative group/bar">
@@ -136,7 +79,7 @@ const Comparison: React.FC = () => {
                                         <span className="text-xs text-zinc-400 font-medium">Legacy: {item.legacy}</span>
                                     </div>
                                     <div className="text-right">
-                                        <span className="font-sans text-sm text-white font-black tracking-wider">+{item.improvement}</span>
+                                        <span className="font-sans text-sm text-white font-black tracking-wider">{item.improvement}</span>
                                     </div>
                                 </div>
                                 <div className="h-[3px] w-full bg-zinc-900/50 overflow-hidden flex relative rounded-full">
@@ -158,8 +101,8 @@ const Comparison: React.FC = () => {
                                     92%
                                 </div>
                                 <h4 className="text-9xl font-black serif text-white mb-6 select-none italic drop-shadow-2xl">92%</h4>
-                                <p className="text-zinc-200 font-bold serif text-3xl mb-4 italic">Efficiency Singularity</p>
-                                <p className="text-zinc-400 text-sm max-w-[280px] mx-auto font-light leading-relaxed">Average reduction in discovery & synthesis cycles for Tier 1 firms.</p>
+                                <p className="text-zinc-200 font-bold serif text-3xl mb-4 italic">Average Reduction</p>
+                                <p className="text-zinc-400 text-sm max-w-[280px] mx-auto font-light leading-relaxed">Reduction in non-billable research time, increasing profitability.</p>
                             </div>
                         </div>
                         {/* HUD Decoration */}

@@ -17,10 +17,10 @@ const Navbar: React.FC = () => {
 
                     <div className="hidden lg:flex items-center space-x-12">
                         {[
-                            { name: 'Origins', href: '#problem' },
-                            { name: 'Logic', href: '#comparison' },
-                            { name: 'Lab', href: '#assistant' },
-                            { name: 'Access', href: '#pricing' }
+                            { name: 'Workflow', href: '#problem' },
+                            { name: 'Comparison', href: '#comparison' },
+                            { name: 'Demo', href: '#assistant' },
+                            { name: 'Pricing', href: '#pricing' }
                         ].map((link) => (
                             <a
                                 key={link.name}
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
                         <button className="relative px-8 py-3.5 overflow-hidden group/btn border border-white/10 hover:border-white/30 transition-all duration-500 rounded-sm">
                             <span className="absolute inset-0 bg-white/5 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></span>
                             <span className="relative z-10 text-zinc-300 text-[10px] font-bold uppercase tracking-widest group-hover:text-white">
-                                Partner Portal
+                                Login
                             </span>
                         </button>
                     </div>

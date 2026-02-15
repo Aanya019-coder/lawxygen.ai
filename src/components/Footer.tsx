@@ -16,14 +16,23 @@ const Footer: React.FC = () => {
                             </span>
                         </div>
                         <p className="text-zinc-500 text-base leading-relaxed font-light max-w-xs transition-colors hover:text-zinc-400">
-                            Advancing the state of law through elite artificial intelligence. Built for those who demand absolute precision.
+                            Empowering attorneys with intelligent legal research and drafting tools.
                         </p>
                     </div>
 
                     <div>
                         <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Platform</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            {['Legal Research', 'Case Analytics', 'Contract Forge', 'Integrations'].map(link => (
+                            {['Legal Research', 'Case Analytics', 'Document Drafting', 'API Access'].map(link => (
+                                <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Resources</h4>
+                        <ul className="space-y-4 text-sm text-zinc-500">
+                            {['Blog & Insights', 'Case Studies', 'Help Center', 'Webinars'].map(link => (
                                 <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
                             ))}
                         </ul>
@@ -32,7 +41,7 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Company</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            {['Our Story', 'Ethics & Bias', 'Contact Support', 'Careers'].map(link => (
+                            {['About Us', 'Careers', 'Ethics & Responsible AI', 'Contact Support'].map(link => (
                                 <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
                             ))}
                         </ul>
@@ -41,7 +50,7 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-white font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Legal</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            {['Privacy Charter', 'Terms of Engagement', 'Data Residency', 'Security Audit'].map(link => (
+                            {['Privacy Policy', 'Terms of Service', 'Data Security', 'Security Audit Report'].map(link => (
                                 <li key={link}><a href="#" className="hover:text-white transition-all hover:translate-x-1 inline-block">{link}</a></li>
                             ))}
                         </ul>
@@ -49,11 +58,11 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="pt-12 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between items-center text-[10px] text-zinc-600 space-y-6 md:space-y-0 uppercase tracking-widest font-bold">
-                    <p>&copy; {new Date().getFullYear()} Lawxygen Technologies Inc. All rights reserved.</p>
+                    <p>&copy; 2026 Lawxygen Technologies Inc. All rights reserved.</p>
                     <div className="flex space-x-10">
                         <a href="#" className="hover:text-white transition-all">LinkedIn</a>
-                        <a href="#" className="hover:text-white transition-all">Twitter (X)</a>
-                        <a href="#" className="hover:text-white transition-all text-zinc-400">Secure Hub</a>
+                        <a href="#" className="hover:text-white transition-all">Twitter</a>
+                        <a href="#" className="hover:text-white transition-all text-zinc-400">Legal Tech Blog</a>
                     </div>
                 </div>
             </div>

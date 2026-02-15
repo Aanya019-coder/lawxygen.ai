@@ -2,9 +2,9 @@ import React from 'react';
 
 const Pricing: React.FC = () => {
     const tiers = [
-        { name: "Associate", price: "$299", desc: "Singular Intelligence", features: ["Full Research Core", "Drafting Logic", "Single Jurisdiction"] },
-        { name: "Partner", price: "$899", desc: "The Collective Edge", features: ["Global Precedent Mapping", "Strategy Simulation", "Unlimited Synthesis", "Concierge Support"] },
-        { name: "Enterprise", price: "POA", desc: "Firm-Wide Protocol", features: ["On-Premise Deployment", "Custom Neural Training", "Direct API Tunnel", "White-glove Strategist"] }
+        { name: "SOLO PRACTITIONER", price: "$299", desc: "Perfect for: Solo attorneys", features: ["Full research capabilities", "Document drafting assistant", "Up to 100 queries/month", "Single jurisdiction focus", "Email support"] },
+        { name: "GROWING FIRM", price: "$899", desc: "Perfect for: Mid-size firms", features: ["Unlimited queries", "Global precedent mapping", "Strategy simulation tools", "Team collaboration features", "Priority phone support"] },
+        { name: "ENTERPRISE", price: "Custom", desc: "Perfect for: Large firms", features: ["On-premise deployment option", "Custom AI training on your cases", "Direct API access", "Dedicated success manager", "White-glove support"] }
     ];
 
     return (
@@ -13,10 +13,10 @@ const Pricing: React.FC = () => {
                 <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="max-w-2xl translate-y-4 opacity-0 animate-[reveal_1s_ease-out_forwards]">
                         <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest mb-6 block font-bold px-4 py-1.5 border border-white/20 rounded-full w-fit">Investment Tiers</span>
-                        <h2 className="text-6xl font-bold text-white serif leading-none">The Price of <br /><span className="italic gold-gradient">Absolute Certainty.</span></h2>
+                        <h2 className="text-6xl font-bold text-white serif leading-none">Transparent Pricing <br /><span className="italic gold-gradient">for Every Practice.</span></h2>
                     </div>
                     <p className="text-zinc-400 text-sm max-w-sm italic border-l border-white/20 pl-6">
-                        Our pricing reflects the high-stakes nature of the results we deliver. Select the tier of power required for your firm's ambition.
+                        Choose the plan that fits your firm's needs. No hidden fees. Cancel anytime.
                     </p>
                 </div>
 
@@ -45,7 +45,7 @@ const Pricing: React.FC = () => {
 
                             <button className="mt-auto w-full py-5 border border-zinc-800 text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 relative overflow-hidden transition-all duration-500 hover:border-white hover:text-black group/btn">
                                 <span className="absolute inset-0 bg-white translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></span>
-                                <span className="relative z-10">Request Engagement</span>
+                                <span className="relative z-10">{i === 0 ? "Start Free Trial" : i === 1 ? "Schedule Demo" : "Contact Sales"}</span>
                             </button>
                         </div>
                     ))}

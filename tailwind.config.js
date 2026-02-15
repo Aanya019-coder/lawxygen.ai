@@ -14,7 +14,7 @@ export default {
                 platinum: '#f5f5f5',
             },
             fontFamily: {
-                serif: ['Playfair Display', 'serif'],
+                serif: ['DM Serif Display', 'serif'],
                 sans: ['Inter', 'sans-serif'],
             },
         },

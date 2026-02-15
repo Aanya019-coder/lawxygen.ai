@@ -41,20 +41,36 @@ const LegalAssistant: React.FC = () => {
             </div>
             <div className="max-w-[1400px] mx-auto px-4 md:px-12 grid lg:grid-cols-12 gap-16 relative z-10">
 
-                <div className="lg:col-span-4 self-center group">
-                    <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest mb-6 block font-bold transition-all group-hover:text-white">Protocol Lab 01</span>
-                    <h2 className="text-5xl font-bold text-white serif leading-none mb-8 transition-transform group-hover:translate-x-2 duration-700">Interface with <br /><span className="italic gold-gradient">Pure Logic.</span></h2>
+                <div className="lg:col-span-4 mb-16 lg:mb-0 lg:pr-12">
+                    <div className="flex items-center space-x-4 mb-6">
+                        <div className="flex space-x-1">
+                            <span className="w-1 h-3 bg-white/20 rounded-full animate-bounce"></span>
+                            <span className="w-1 h-4 bg-white/40 rounded-full animate-bounce [animation-delay:0.1s]"></span>
+                            <span className="w-1 h-2 bg-white/20 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                        </div>
+                        <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest font-bold font-mono">Secure Research Environment</span>
+                    </div>
+
+                    <h2 className="text-5xl font-bold text-white serif leading-none mb-8 transition-transform group-hover:translate-x-2 duration-700">Interface with <br /><span className="italic gold-gradient">Intelligence.</span></h2>
                     <p className="text-stone-300 text-sm leading-relaxed mb-8 border-l border-white/20 pl-6 group-hover:border-white transition-colors">
-                        Access the secure sandbox. Every interaction is encrypted with end-to-end proprietary firm-level protocols. Ask about strategy, precedent, or procedural mechanics.
+                        Experience the secure research environment. Every interaction is encrypted with firm-grade security protocols. Ask about strategy, precedent, or procedure.
                     </p>
-                    <div className="grid grid-cols-2 gap-8">
+
+                    <div className="grid grid-cols-2 gap-8 border-t border-zinc-800 pt-8">
                         <div className="text-left group/item">
                             <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-zinc-200 group-hover/item:translate-x-1">0.02s</span>
-                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Delay</span>
+                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Latency</span>
                         </div>
                         <div className="text-left group/item">
                             <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-zinc-200 group-hover/item:translate-x-1">256-Bit</span>
                             <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Encryption</span>
+                        </div>
+                        <div className="text-left group/item col-span-2">
+                            <div className="flex items-center gap-2 mb-1">
+                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span className="block text-white font-sans text-sm font-bold transition-all group-hover/item:text-zinc-200">Neural Path Active</span>
+                            </div>
+                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest pl-4">System Status</span>
                         </div>
                     </div>
                 </div>

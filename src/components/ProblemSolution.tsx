@@ -4,11 +4,11 @@ import LogicCore from './LogicCore';
 
 const ProblemSolution: React.FC = () => {
     const workflowStages = [
-        { name: "Intake", subtitle: "Voice-to-Text", icon: <Icons.Brain /> },
-        { name: "Research", subtitle: "Precedent Mining", icon: <Icons.FileText /> },
-        { name: "Strategy", subtitle: "Outcome Prediction", icon: <Icons.Shield /> },
-        { name: "Drafting", subtitle: "Auto-Generation", icon: <Icons.Gavel /> },
-        { name: "Execution", subtitle: "Filing & Tracking", icon: <Icons.Scale /> },
+        { name: "Intake", subtitle: "Capture Every Detail", icon: <Icons.Brain /> },
+        { name: "Research", subtitle: "Find What Matters", icon: <Icons.FileText /> },
+        { name: "Strategy", subtitle: "Know Your Position", icon: <Icons.Shield /> },
+        { name: "Drafting", subtitle: "Generate First Drafts", icon: <Icons.Gavel /> },
+        { name: "Execution", subtitle: "Stay on Track", icon: <Icons.Scale /> },
     ];
 
     return (
@@ -17,12 +17,12 @@ const ProblemSolution: React.FC = () => {
                 {/* Workflow Process Section */}
                 <div className="mb-32">
                     <div className="text-center mb-16">
-                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">The Legal Operating System</span>
+                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">Not a Tool. A Complete Legal Workflow.</span>
                         <h2 className="text-4xl md:text-6xl font-bold text-white serif leading-none mb-4">
-                            Not a Tool. A <span className="italic gold-gradient">Unified Operating System.</span>
+                            Every Phase of Your Case. <span className="italic gold-gradient">One Intelligent Platform.</span>
                         </h2>
                         <p className="text-zinc-400 text-sm max-w-2xl mx-auto mt-6">
-                            Lawxygen integrates every phase of the legal process, creating a single source of truth for case data.
+                            Lawxygen integrates seamlessly into your practice, from client intake to final brief. Stop switching between tools. Start working smarter.
                         </p>
                     </div>
 
@@ -68,17 +68,20 @@ const ProblemSolution: React.FC = () => {
                     <div className="flex-1 p-16 md:p-24 bg-neutral-950 relative overflow-hidden group">
                         <div className="relative z-10">
                             <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-10 block font-bold">Legacy Systems</span>
-                            <h2 className="text-5xl md:text-6xl font-bold text-zinc-500 serif mb-12 leading-none">The Burden of <br /><span className="italic">Manual Law.</span></h2>
+                            <h2 className="text-5xl md:text-6xl font-bold text-zinc-500 serif mb-12 leading-none">The Burden of <br /><span className="italic">Traditional Research.</span></h2>
                             <ul className="space-y-10">
                                 {[
-                                    "Obscure precedents buried in silos.",
-                                    "Billable leakage through mechanical review.",
-                                    "The fatal risk of human oversight.",
-                                    "Cognitive fatigue in high-stakes litigation."
+                                    { title: "Lost Precedents", desc: "Critical cases buried in siloed databases, discoverable only through exhaustive manual search." },
+                                    { title: "Billable Hour Leakage", desc: "Hours spent on mechanical review that could be spent on strategic thinking." },
+                                    { title: "Human Oversight Risk", desc: "Even the best attorneys can miss details under deadline pressure." },
+                                    { title: "Research Fatigue", desc: "Cognitive overload from managing multiple cases, jurisdictions, and sources simultaneously." }
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start space-x-6 group-hover:opacity-100 opacity-40 transition-all duration-700">
                                         <span className="text-zinc-600 font-sans text-[10px] pt-1.5 font-bold tracking-widest">0{i + 1}</span>
-                                        <p className="text-zinc-500 text-base leading-relaxed font-light">{item}</p>
+                                        <div>
+                                            <h4 className="text-zinc-400 font-bold text-sm mb-2">{item.title}</h4>
+                                            <p className="text-zinc-500 text-sm leading-relaxed font-light">{item.desc}</p>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
@@ -100,25 +103,25 @@ const ProblemSolution: React.FC = () => {
 
                         <div className="relative z-10">
                             <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-[0.4em] mb-10 block font-bold px-4 py-1 border border-white/20 rounded-full w-fit">Lawxygen Protocol</span>
-                            <h2 className="text-5xl md:text-6xl font-bold text-white serif mb-12 leading-none">The Clarity of <br /><span className="italic gold-gradient">Intelligence.</span></h2>
+                            <h2 className="text-5xl md:text-6xl font-bold text-white serif mb-12 leading-none">The Power of <br /><span className="italic gold-gradient">Intelligent Assistance.</span></h2>
 
                             <div className="space-y-10">
                                 <div className="p-10 rounded-sm glass-strong border border-white/5 border-l-4 border-l-white hover:border-white/20 transition-all duration-500 transform hover:translate-x-2">
-                                    <h4 className="text-white font-bold mb-4 serif text-2xl">Cognitive Synthesis</h4>
+                                    <h4 className="text-white font-bold mb-4 serif text-2xl">Cognitive Mapping</h4>
                                     <p className="text-stone-300 text-sm leading-relaxed font-light">
-                                        Don't just search. Understand. Lawxygen maps judicial logic across billions of data points to reveal the winning path.
+                                        Don't just search—understand. Lawxygen maps legal reasoning across millions of cases to reveal winning arguments.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-2 gap-8">
                                     <div className="p-8 glass border border-white/5 hover:border-white/30 transition-all duration-500 group/item">
                                         <div className="text-zinc-300 mb-6 transform group-hover/item:scale-110 transition-transform group-hover/item:text-white"><Icons.Brain /></div>
-                                        <span className="text-white font-bold block mb-2 text-xs uppercase tracking-widest">Stress Analysis</span>
-                                        <p className="text-[10px] text-zinc-400 leading-relaxed">Autonomous argument testing.</p>
+                                        <span className="text-white font-bold block mb-2 text-xs uppercase tracking-widest">Automated Testing</span>
+                                        <p className="text-[10px] text-zinc-400 leading-relaxed">Stress-test your arguments against counter-precedents.</p>
                                     </div>
                                     <div className="p-8 glass border border-white/5 hover:border-white/30 transition-all duration-500 group/item">
                                         <div className="text-zinc-300 mb-6 transform group-hover/item:scale-110 transition-transform group-hover/item:text-white"><Icons.Shield /></div>
-                                        <span className="text-white font-bold block mb-2 text-xs uppercase tracking-widest">Zero Loss</span>
-                                        <p className="text-[10px] text-zinc-400 leading-relaxed">Grounded citation engine.</p>
+                                        <span className="text-white font-bold block mb-2 text-xs uppercase tracking-widest">Verified Citations</span>
+                                        <p className="text-[10px] text-zinc-400 leading-relaxed">Every result is traceable, citable, and court-ready.</p>
                                     </div>
                                 </div>
                             </div>

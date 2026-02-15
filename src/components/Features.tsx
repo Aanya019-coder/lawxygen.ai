@@ -5,7 +5,7 @@ import { Feature } from '../types';
 const features: Feature[] = [
     {
         title: "Instant Research",
-        description: "Navigate millions of case files and statutes in seconds. Our AI doesn't just search; it understands context.",
+        description: "Stop drowning in search results. Ask Lawxygen a question the way you'd brief a junior associate, and get precise, citable answers.",
         icon: <Icons.Brain />,
         bgPattern: (
             <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
@@ -17,7 +17,7 @@ const features: Feature[] = [
     },
     {
         title: "Document Synthesis",
-        description: "Generate ironclad contracts and briefs using pre-vetted legal architectures adapted to your specific case.",
+        description: "Create first drafts of contracts, motions, and briefs using pre-vetted legal architectures. Edit with confidence knowing every clause is supported by case law.",
         icon: <Icons.FileText />,
         bgPattern: (
             <div className="absolute inset-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700">
@@ -31,7 +31,7 @@ const features: Feature[] = [
     },
     {
         title: "Risk Prediction",
-        description: "Predict litigation outcomes with 89% accuracy using historical judicial data and semantic pattern matching.",
+        description: "Analyze historical data and judicial patterns to predict litigation outcomes with 89% accuracy. Know your strengths, anticipate weaknesses.",
         icon: <Icons.Shield />,
         bgPattern: (
             <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
@@ -43,7 +43,7 @@ const features: Feature[] = [
     },
     {
         title: "Authority Mapping",
-        description: "Visually trace citations and legal precedents to find the pivotal case that wins your argument.",
+        description: "See how cases connect across decades. Identify the pivotal precedent that anchors your argument and trace its influence through the legal system.",
         icon: <Icons.Gavel />,
         bgPattern: (
             <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
@@ -67,10 +67,10 @@ const Features: React.FC = () => {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12">
                     <div className="max-w-3xl">
                         <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-8 block font-bold">Core Capabilities</span>
-                        <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">Legal Intelligence <br /><span className="italic gold-gradient">Reimagined.</span></h2>
+                        <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">Legal Intelligence <br /><span className="italic gold-gradient">Built for Your Practice.</span></h2>
                     </div>
                     <p className="text-stone-300 text-lg max-w-md italic border-l border-white/20 pl-8 leading-relaxed font-light">
-                        We've distilled the complexity of law into a seamless cognitive companion for the world's most elite attorneys.
+                        We've distilled decades of legal expertise into an AI assistant that understands context, not just keywords.
                     </p>
                 </div>
 

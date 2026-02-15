@@ -51,23 +51,23 @@ const CTA: React.FC = () => {
 
                 {/* Headline */}
                 <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-tight mb-8">
-                    Your New <span className="italic gold-gradient">Silent Partner</span>
+                    Your New <span className="italic gold-gradient">Partner in Practice.</span>
                 </h2>
 
                 {/* Subheadline */}
                 <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto font-light">
-                    The intelligence that keeps litigation alive and thriving. From intake to judgment, we are the operating system for the future of law.
+                    From intake to judgment, Lawxygen is the intelligent layer between you and information overload. Focus on what you do best—let us handle the rest.
                 </p>
 
                 {/* CTA Button */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                     <button className="group/btn relative px-12 py-6 bg-white text-black font-bold text-sm uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
-                        <span className="relative z-10">Join the Revolution</span>
+                        <span className="relative z-10">Start Free Trial</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-zinc-100 to-white opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
                     </button>
 
                     <button className="group/btn relative px-12 py-6 border-2 border-white/20 text-white font-bold text-sm uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:border-white/50 hover:bg-white/5">
-                        <span className="relative z-10">Request Access</span>
+                        <span className="relative z-10">Schedule a Demo</span>
                         <div className="absolute inset-0 bg-white/5 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
                     </button>
                 </div>
@@ -77,7 +77,7 @@ const CTA: React.FC = () => {
                     <div className="flex flex-wrap justify-center items-center gap-12 text-zinc-500 text-xs uppercase tracking-widest">
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                            <span>SOC 2 Compliant</span>
+                            <span>SOC 2 Type II Compliant</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-full bg-white/20"></div>
@@ -85,7 +85,11 @@ const CTA: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                            <span>Trusted by 500+ Firms</span>
+                            <span>Used by 2,000+ Attorneys</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                            <span>4.9/5 Average Rating</span>
                         </div>
                     </div>
                 </div>

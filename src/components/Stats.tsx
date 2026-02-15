@@ -4,23 +4,23 @@ const Stats: React.FC = () => {
     const stats = [
         {
             value: "92%",
-            label: "Research Time Reduction",
-            description: "Average time saved vs. traditional methods"
+            label: "Research Time Saved",
+            description: "Average time reduction vs. traditional legal research methods"
         },
         {
             value: "98%",
             label: "Citation Accuracy",
-            description: "AI-verified precedent matching (Post-Review)"
+            description: "Verified precedent matching across all major jurisdictions"
         },
         {
             value: "8 Min",
-            label: "Document Processing",
-            description: "Average synthesis time (Down from 4-6 Hours)"
+            label: "Average Synthesis Time",
+            description: "From question to actionable insight (down from 4-6 hours)"
         },
         {
             value: "24/7",
-            label: "Continuous Intelligence",
-            description: "Real-time legal database monitoring"
+            label: "Always Ready",
+            description: "Real-time access to legal intelligence when you need it most"
         },
     ];
 

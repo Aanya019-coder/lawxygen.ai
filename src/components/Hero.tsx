@@ -21,23 +21,23 @@ const Hero: React.FC = () => {
                     </div>
 
                     <h1 className="text-5xl md:text-6xl xl:text-7xl font-black text-white serif leading-[0.9] mb-12 tracking-tight animate-reveal [animation-delay:0.2s]">
-                        Jurisprudence,<br />
-                        <span className="gold-gradient italic pb-4 block">Evolved.</span>
+                        Your Legal Research Partner,<br />
+                        <span className="gold-gradient italic pb-4 block">Reimagined.</span>
                     </h1>
 
                     <div className="max-w-2xl translate-y-4 opacity-0 animate-reveal [animation-delay:0.4s]">
                         <p className="text-xl md:text-2xl text-zinc-400 font-light leading-relaxed mb-16 border-l-2 border-white/20 pl-8 transition-colors hover:border-white">
-                            Lawxygen isn't a tool; it's a cognitive shift. We've synthesized the world's legal archives into a single, high-fidelity intelligence layer for the elite firm.
+                            Lawxygen handles the research, drafting, and analysis—so you can focus on strategy, advocacy, and winning cases. Built for attorneys who demand precision without the complexity.
                         </p>
 
                         <div className="flex flex-wrap items-center gap-8">
                             <button className="group relative px-12 py-5 overflow-hidden rounded-sm transition-all duration-500 hover:scale-105 active:scale-95 bg-white text-black btn-glow">
-                                <span className="relative z-10 font-bold uppercase tracking-widest text-sm">Initiate Protocol</span>
+                                <span className="relative z-10 font-bold uppercase tracking-widest text-sm">Start Free Trial</span>
                             </button>
 
                             <button className="px-8 py-5 border border-white/20 text-zinc-400 hover:text-white hover:border-white transition-all uppercase tracking-widest text-xs font-bold rounded-sm relative overflow-hidden group">
                                 <span className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-                                The Lab Report — 2025
+                                See How It Works
                             </button>
                         </div>
                     </div>
