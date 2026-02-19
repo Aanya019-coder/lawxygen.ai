@@ -12,6 +12,39 @@
   /* Re-mapped to White */
   --silver: #e4e4e7;
   --platinum: #71717a;
+  --scroll-progress: 0%;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--scroll-progress);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer base {
@@ -267,6 +300,244 @@
   }
 }
 
+/* Background Image Utilities */
+.bg-hero-image {
+  background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), url('https://images.unsplash.com/photo-1505664194779-8beaceb9dd74?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-stats-image {
+  background-image: radial-gradient(circle at center, rgba(5, 5, 5, 0.3) 0%, rgba(5, 5, 5, 0.8) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-cta-image {
+  background-image: linear-gradient(to right, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.5)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-footer-image {
+  background-image: linear-gradient(to top, rgba(5, 5, 5, 1), rgba(5, 5, 5, 0.8)), url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-struggle-image {
+  background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Feature Card Backgrounds */
+.bg-feature-intel {
+  background-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-feature-voice {
+  background-image: url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-feature-analysis {
+  background-image: url('https://images.unsplash.com/photo-1586762524444-80cd05ef0ca5?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-feature-gen {
+  background-image: url('https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-feature-research {
+  background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-feature-vision {
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800');
+}
+
+/* Segment Card Backgrounds */
+.bg-segment-lawyers {
+  background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-segment-students {
+  background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-segment-gov {
+  background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800');
+}
+
+/* Stats Card Backgrounds */
+.bg-stat-judgments {
+  background-image: url('https://images.unsplash.com/photo-1589216532372-1c2a367900d9?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-stat-acts {
+  background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-stat-costs {
+  background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-stat-time {
+  background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800');
+}
+
+/* Workflow Step Backgrounds */
+.bg-step-ask {
+  background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-step-think {
+  background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-step-review {
+  background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800');
+}
+
+/* Pricing Card Backgrounds */
+.bg-pricing-counsel {
+  background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-pricing-chambers {
+  background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-pricing-insto {
+  background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800');
+}
+
+/* Struggle Item Backgrounds */
+.bg-struggle-recovery {
+  background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-struggle-memory {
+  background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-struggle-partner {
+  background-image: url('https://images.unsplash.com/photo-1521791136364-798a7bc0d262?auto=format&fit=crop&q=80&w=800');
+}
+
+.bg-struggle-messy {
+  background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800');
+}
+
+.card-bg-common {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Scroll-triggered reveal — elements start hidden, .in-view makes them visible */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-from-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-from-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-from-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-from-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays for child elements */
+.stagger-children>*:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.stagger-children>*:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+.stagger-children>*:nth-child(3) {
+  transition-delay: 160ms;
+}
+
+.stagger-children>*:nth-child(4) {
+  transition-delay: 240ms;
+}
+
+.stagger-children>*:nth-child(5) {
+  transition-delay: 320ms;
+}
+
+/* Text gradient shimmer — used for section labels */
+.label-shimmer {
+  background: linear-gradient(90deg, #71717a 0%, #ffffff 50%, #71717a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Glimmer animation for pricing cards */
+@keyframes glimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+/* Section divider line */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
 /* Flowing Wave Animations - Inspired by reference */
 @keyframes wave-flow {
   0% {
@@ -408,36 +679,40 @@
   animation: shimmer 3s linear infinite;
 }
 
-/* Flowing Background Waves */
+/* Performance-Optimized Flowing Background Waves */
 .flowing-waves {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  contain: strict;
+  z-index: 0;
 }
 
 .flowing-waves::before,
 .flowing-waves::after {
   content: '';
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center,
-      rgba(255, 255, 255, 0.03) 0%,
-      transparent 50%);
-  opacity: 0.5;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 70%);
+  opacity: 0.3;
+  will-change: transform;
 }
 
 .flowing-waves::before {
-  top: -50%;
-  left: -50%;
-  animation: wave-flow 30s ease-in-out infinite;
+  top: -25%;
+  left: -25%;
+  animation: wave-flow 40s ease-in-out infinite;
 }
 
 .flowing-waves::after {
-  bottom: -50%;
-  right: -50%;
-  animation: wave-flow-reverse 35s ease-in-out infinite;
+  bottom: -25%;
+  right: -25%;
+  animation: wave-flow-reverse 45s ease-in-out infinite;
+  opacity: 0.2;
 }
 
 /* Logic Core Animation */

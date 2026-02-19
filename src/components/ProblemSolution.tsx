@@ -1,105 +1,115 @@
-import React from 'react';
-import { Icons } from '../constants';
+import React, { useEffect, useRef, useState } from 'react';
+
+interface StepItem {
+    number: string;
+    title: string;
+    description: string;
+    bgImageClass: string;
+}
 
 const ProblemSolution: React.FC = () => {
-    const workflowStages = [
-        { name: "Step 1", subtitle: "Ask Your Question", icon: <Icons.Brain />, description: "Type what you're looking for: \"breach of contract cases in California involving software licenses\"" },
-        { name: "Step 2", subtitle: "Get Relevant Results", icon: <Icons.FileText />, description: "Lawxygen searches and shows you the most relevant cases, with the key points extracted." },
-        { name: "Step 3", subtitle: "Read and Cite", icon: <Icons.Gavel />, description: "Click any case to see the full text. All citations are properly formatted and verified." },
-    ];
+    const sectionRef = useRef<HTMLElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-    const users = [
+    useEffect(() => {
+        const el = sectionRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(el); } },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
+    const steps: StepItem[] = [
         {
-            title: "Solo Practitioners",
-            description: "When you can't afford a research assistant",
-            quote: "\"I handle everything myself—client calls, court appearances, research. Lawxygen cuts my research time in half, which means I can take on more clients without working 80-hour weeks.\""
+            number: "01",
+            title: "Ask your question",
+            description: "Type or speak your legal question in plain language. Lawxygen will ask clarifying questions if your query is ambiguous—just like a sharp colleague.",
+            bgImageClass: "bg-step-ask"
         },
         {
-            title: "Small Firms (2-10 attorneys)",
-            description: "When you need consistent research quality",
-            quote: "\"Before Lawxygen, research quality varied depending on which associate did it. Now everyone starts from the same high-quality database search.\""
+            number: "02",
+            title: "Lawxygen researches and thinks",
+            description: "She searches across Supreme Court judgments, Central Acts, and Constitutional provisions. Watch her reasoning unfold in real time.",
+            bgImageClass: "bg-step-think"
         },
         {
-            title: "Mid-Size Firms",
-            description: "When you want to reduce associate research hours",
-            quote: "\"Our associates use Lawxygen for the initial research phase. They find relevant cases faster, which means less time billed to clients and fewer revision rounds.\""
+            number: "03",
+            title: "Review your opinion",
+            description: "Get a comprehensive legal opinion with proper citations, case references, and actionable analysis. Download as PDF or Word.",
+            bgImageClass: "bg-step-review"
         }
     ];
 
     return (
-        <section id="problem" className="py-24 bg-black relative">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-                {/* Workflow Process Section */}
-                <div className="mb-32">
-                    <div className="text-center mb-16">
-                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">How It Works</span>
-                        <h2 className="text-4xl md:text-6xl font-bold text-white serif leading-none mb-4">
-                            Simple <span className="italic gold-gradient">Legal Research.</span>
-                        </h2>
-                        <p className="text-zinc-400 text-sm max-w-2xl mx-auto mt-6">
-                            That's it. No complex queries. No Boolean operators unless you want them.
-                        </p>
-                    </div>
+        <section ref={sectionRef} id="how-it-works" className="py-24 bg-black relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.02),transparent_50%)] pointer-events-none"></div>
 
-                    {/* Process Flow Cards */}
-                    <div className="relative">
-                        {/* Connection Line */}
-                        <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2 hidden lg:block"></div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-                            {workflowStages.map((stage, idx) => (
-                                <div key={idx} className="group relative">
-                                    {/* Connector Dot */}
-                                    {idx < workflowStages.length - 1 && (
-                                        <div className="absolute top-1/2 -right-3 w-6 h-6 -translate-y-1/2 z-20 hidden lg:flex items-center justify-center">
-                                            <div className="w-2 h-2 rounded-full bg-white/20 group-hover:bg-white/40 group-hover:scale-150 transition-all duration-300"></div>
-                                            <svg className="absolute w-4 h-4 text-white/10 group-hover:text-white/20 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </div>
-                                    )}
-
-                                    <div className="glass border border-white/5 rounded-sm p-8 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden group/card h-full">
-                                        {/* Card Background Pattern */}
-                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_70%)] opacity-0 group-hover/card:opacity-100 transition-opacity"></div>
-
-                                        <div className="relative z-10">
-                                            <div className="w-12 h-12 mb-6 rounded-sm bg-black/50 border border-white/10 flex items-center justify-center text-zinc-400 group-hover/card:text-white group-hover/card:border-white/30 transition-all">
-                                                {stage.icon}
-                                            </div>
-                                            <h4 className="text-white font-bold text-lg mb-2 serif">{stage.name}</h4>
-                                            <p className="text-zinc-500 text-xs uppercase tracking-wider mb-2">{stage.subtitle}</p>
-                                            <p className="text-zinc-400 text-sm leading-relaxed">{stage.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+            <div className="max-w-[1400px] mx-auto px-4 md:px-12 relative z-10">
+                <div
+                    className="mb-20 text-center"
+                    style={{
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'opacity 0.7s ease, transform 0.7s ease',
+                    }}
+                >
+                    <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">From messy question to polished opinion</span>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white serif leading-tight">
+                        Three steps. <span className="gold-gradient">No learning curve.</span>
+                    </h2>
                 </div>
 
-                {/* Who Uses Lawxygen Section */}
-                <div className="bg-zinc-900/30 border border-white/5 p-12 lg:p-24 rounded-sm relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02),transparent_70%)]"></div>
+                <div className="grid md:grid-cols-3 gap-12">
+                    {steps.map((step, i) => (
+                        <div
+                            key={i}
+                            className="group"
+                            style={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                                transition: `opacity 0.7s ease ${i * 0.15}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.15}s`,
+                            }}
+                        >
+                            <div className="glass border border-white/5 p-10 rounded-sm hover:border-white/20 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden h-full shadow-2xl shadow-black/40">
+                                {/* Step-Specific Background Image with Overlay */}
+                                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 ${step.bgImageClass} card-bg-common pointer-events-none`}></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-1000"></div>
 
-                    <div className="relative z-10">
-                        <div className="text-center mb-16">
-                            <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-6 block font-bold">Target Audience</span>
-                            <h2 className="text-4xl md:text-5xl font-bold text-white serif leading-none mb-12">Who Uses <span className="italic gold-gradient">Lawxygen?</span></h2>
-                        </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                            {users.map((user, i) => (
-                                <div key={i} className="group">
-                                    <h3 className="text-2xl text-white font-bold serif mb-2">{user.title}</h3>
-                                    <p className="text-zinc-500 text-xs uppercase tracking-widest mb-6 font-bold">{user.description}</p>
-                                    <div className="border-l-2 border-white/10 pl-6 group-hover:border-white/40 transition-colors">
-                                        <p className="text-zinc-400 text-sm italic leading-relaxed">
-                                            {user.quote}
-                                        </p>
-                                    </div>
+                                <div className="text-5xl font-black text-zinc-900 mb-6 group-hover:text-white/10 transition-colors select-none font-sans italic relative z-10">
+                                    {step.number}
                                 </div>
-                            ))}
+                                <h4 className="text-white font-bold text-xl mb-4 serif relative z-10">{step.title}</h4>
+                                <p className="text-zinc-500 text-sm leading-relaxed font-light group-hover:text-zinc-300 transition-colors relative z-10">
+                                    {step.description}
+                                </p>
+
+                                {/* Accent line */}
+                                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-white/40 group-hover:w-full transition-all duration-700"></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Integration preview */}
+                <div
+                    className="mt-24 max-w-4xl mx-auto glass-strong border border-white/10 p-12 rounded-sm relative overflow-hidden group"
+                    style={{
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                        transition: 'opacity 0.7s ease 0.6s, transform 0.7s ease 0.6s',
+                    }}
+                >
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2"></div>
+                    <div className="text-center relative z-10">
+                        <div className="text-5xl text-zinc-800 font-serif leading-none mb-6 select-none opacity-50">"</div>
+                        <p className="text-2xl text-white font-light serif leading-relaxed mb-8">
+                            "Lawxygen gives you a thinking partner who catches what you miss. She doesn't just find relevant law — she synthesizes it into a coherent analysis."
+                        </p>
+                        <div className="flex flex-col items-center">
+                            <span className="text-white font-bold text-xs uppercase tracking-widest">Built for Indian Legal Professionals</span>
                         </div>
                     </div>
                 </div>

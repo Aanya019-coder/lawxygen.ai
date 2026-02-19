@@ -1,91 +1,126 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Icons } from '../constants';
-import { Feature } from '../types';
 
-const features: Feature[] = [
+interface FeatureItem {
+    title: string;
+    description: string;
+    icon: React.ReactNode;
+    bgImageClass: string;
+}
+
+const features: FeatureItem[] = [
     {
-        title: "Legal Research",
-        description: "Search Westlaw, LexisNexis, and public legal databases. Filter by jurisdiction, date, court level. Get cases ranked by relevance to your query. See key excerpts from each case and click through to read full opinions.",
+        title: "Conversational legal intelligence",
+        description: "Ask questions in plain language, and Lawxygen responds with legally precise, citation-backed answers. No query syntax. No boolean searches.",
         icon: <Icons.Brain />,
-        bgPattern: (
-            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_70%)] blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
-                <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_45%,rgba(255,255,255,0.03)_50%,transparent_55%)] bg-[length:20px_20px]"></div>
-            </div>
-        )
+        bgImageClass: "bg-feature-intel"
     },
     {
-        title: "Citation Verification",
-        description: "Paste in your brief or memo. Lawxygen will verify each citation format, check if cases have been overruled, show treatment history, and flag any broken or incorrect citations. Catches errors before you file.",
+        title: "Voice input",
+        description: "Dictate your legal questions naturally. Lawxygen processes spoken input with the same precision as typed queries.",
         icon: <Icons.Shield />,
-        bgPattern: (
-            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,rgba(255,255,255,0.05)_50%,transparent_100%)]"></div>
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[linear-gradient(to_top,rgba(255,255,255,0.05),transparent)]"></div>
-            </div>
-        )
+        bgImageClass: "bg-feature-voice"
     },
     {
-        title: "Case Summaries",
-        description: "Understand cases faster. For any case, get a one-paragraph summary of facts, key legal holdings, how it has been cited by other courts, and related cases you might want to check.",
+        title: "Document upload and analysis",
+        description: "Upload contracts, judgments, or briefs. Lawxygen reads, extracts key provisions, and identifies risks against statutes.",
         icon: <Icons.FileText />,
-        bgPattern: (
-            <div className="absolute inset-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
-                }}></div>
-            </div>
-        )
+        bgImageClass: "bg-feature-analysis"
     },
     {
-        title: "Document Templates",
-        description: "Start from proven structures. Access templates for Motions to dismiss, Summary judgment motions, Discovery requests, and Standard contracts. These are starting points—customize them for your case.",
+        title: "Document generation",
+        description: "Get draft legal opinions, case summaries, and research memos with proper citations, formatted and ready for review.",
         icon: <Icons.Gavel />,
-        bgPattern: (
-            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px)`,
-                    backgroundSize: '24px 24px'
-                }}></div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_60%)]"></div>
-            </div>
-        )
+        bgImageClass: "bg-feature-gen"
+    },
+    {
+        title: "Legal research",
+        description: "Deep research across Supreme Court judgments, Central Acts, and Constitutional provisions. Synthesized into coherent analysis.",
+        icon: <Icons.Scale />,
+        bgImageClass: "bg-feature-research"
+    },
+    {
+        title: "Chain of thought visualization",
+        description: "Watch Lawxygen think in real time. See which cases she's examining and how she's building her analysis. Full transparency.",
+        icon: <Icons.Brain />,
+        bgImageClass: "bg-feature-vision"
     },
 ];
 
 const Features: React.FC = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const el = sectionRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(el); } },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="features" className="py-24 neural-bg group relative overflow-hidden">
+        <section ref={sectionRef} id="features" className="py-24 neural-bg group relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-zinc-800/10 blur-[150px] pointer-events-none"></div>
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12">
+                <div
+                    className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12"
+                    style={{
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'opacity 0.7s ease, transform 0.7s ease',
+                    }}
+                >
                     <div className="max-w-3xl">
-                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-8 block font-bold">Core Capabilities</span>
-                        <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-none mb-8">What Lawxygen <br /><span className="italic gold-gradient">Actually Does.</span></h2>
+                        <span className="font-sans text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-8 block font-bold">Six Capabilities</span>
+                        <h2 className="text-5xl md:text-7xl font-bold text-white serif leading-tight mb-8">
+                            One Thinking <br /><span className="gold-gradient">Partner.</span>
+                        </h2>
                     </div>
+                    <p className="text-zinc-500 text-sm max-w-xs border-l border-white/10 pl-6">
+                        Everything you need to research, draft, and think through Indian law.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 group/container">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 group/container">
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
-                            className={`p-12 rounded-sm border border-white/5 bg-[#0c0a09]/80 glass backdrop-blur-3xl hover:border-white/30 transition-all duration-700 group relative overflow-hidden hover:-translate-y-2 shadow-2xl shadow-black/50`}
+                            className="p-10 rounded-sm border border-white/5 bg-[#0c0a09]/90 glass backdrop-blur-3xl hover:border-white/30 transition-all duration-700 group relative overflow-hidden hover:-translate-y-3 shadow-2xl shadow-black/50 h-full flex flex-col"
+                            style={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+                                transition: `opacity 0.7s ease ${idx * 0.1}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${idx * 0.1}s, border-color 0.3s ease, box-shadow 0.3s ease`,
+                            }}
                         >
-                            {/* Feature-Specific Background Pattern */}
-                            {feature.bgPattern}
+                            {/* Feature-Specific Background Image with Overlay */}
+                            <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 ${feature.bgImageClass} card-bg-common pointer-events-none`}></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-1000"></div>
 
                             {/* Global Card Glow */}
                             <div className="absolute -top-12 -right-12 w-24 h-24 bg-white/5 blur-3xl rounded-full transition-all group-hover:bg-white/10 pointer-events-none"></div>
 
-                            <div className={`mb-10 p-5 w-fit rounded-sm bg-black/50 text-zinc-400 border border-white/5 group-hover:scale-110 group-hover:border-white/30 group-hover:text-white transition-all duration-500 relative z-10`}>
+                            {/* Icon */}
+                            <div className="mb-10 p-5 w-fit rounded-sm bg-black/50 text-zinc-400 border border-white/5 group-hover:scale-110 group-hover:border-white/30 group-hover:text-white transition-all duration-500 relative z-10">
                                 {feature.icon}
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-6 serif italic transition-colors group-hover:text-zinc-200 relative z-10">{feature.title}</h3>
-                            <p className="text-stone-400 leading-relaxed text-sm font-light transition-colors group-hover:text-stone-200 relative z-10">
+
+                            {/* Feature number */}
+                            <div className="absolute top-6 right-6 text-[10px] text-zinc-700 font-bold font-sans tracking-widest">
+                                {String(idx + 1).padStart(2, '0')}
+                            </div>
+
+                            <h3 className="text-2xl font-bold text-white mb-6 serif transition-colors group-hover:text-zinc-200 relative z-10">{feature.title}</h3>
+                            <p className="text-stone-400 leading-relaxed text-sm font-light transition-colors group-hover:text-stone-200 relative z-10 flex-1">
                                 {feature.description}
                             </p>
+
+                            {/* Bottom accent */}
+                            <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-gradient-to-r from-white/40 to-transparent group-hover:w-full transition-all duration-700"></div>
                         </div>
                     ))}
                 </div>

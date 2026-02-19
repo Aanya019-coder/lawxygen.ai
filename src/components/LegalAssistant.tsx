@@ -6,7 +6,7 @@ import SpinningNumbers from './SpinningNumbers';
 
 const LegalAssistant: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'assistant', content: "SYSTEM INITIALIZED. LAWXYGEN CORE ACTIVE. READY FOR INQUIRY." }
+        { role: 'assistant', content: "Lawxygen initialized. Indian Law Node Active. Ready for case research or document analysis." }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +29,15 @@ const LegalAssistant: React.FC = () => {
         setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
         setIsLoading(true);
 
+        // Simple mock response for specific demo question if needed, else use real service
+        if (userMessage.toLowerCase().includes('evict a tenant during the pandemic')) {
+            setTimeout(() => {
+                setMessages(prev => [...prev, { role: 'assistant', content: "Before I dig in — are you asking about commercial or residential tenancy? And which state? The moratorium orders in India varied significantly by jurisdiction during the pandemic." }]);
+                setIsLoading(false);
+            }, 1000);
+            return;
+        }
+
         const response = await generateLegalResponse(userMessage);
         setMessages(prev => [...prev, { role: 'assistant', content: response }]);
         setIsLoading(false);
@@ -48,98 +57,134 @@ const LegalAssistant: React.FC = () => {
                             <span className="w-1 h-4 bg-white/40 rounded-full animate-bounce [animation-delay:0.1s]"></span>
                             <span className="w-1 h-2 bg-white/20 rounded-full animate-bounce [animation-delay:0.2s]"></span>
                         </div>
-                        <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest font-bold font-mono">Secure Research Environment</span>
+                        <span className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest font-bold font-mono">Indian Case Law Intelligence</span>
                     </div>
 
-                    <h2 className="text-5xl font-bold text-white serif leading-none mb-8 transition-transform group-hover:translate-x-2 duration-700">Interface with <br /><span className="italic gold-gradient">Intelligence.</span></h2>
+                    <h2 className="text-5xl font-bold text-white serif leading-tight mb-8 transition-transform group-hover:translate-x-2 duration-700">Thinks with you, <br /><span className="gold-gradient">not for you.</span></h2>
                     <p className="text-stone-300 text-sm leading-relaxed mb-8 border-l border-white/20 pl-6 group-hover:border-white transition-colors">
-                        Experience the secure research environment. Every interaction is encrypted with firm-grade security protocols. Ask about strategy, precedent, or procedure.
+                        Lawxygen is a legal thinking partner that researches across Supreme Court judgments, Central Acts, and Constitutional provisions dated back to 1890.
                     </p>
 
                     <div className="grid grid-cols-2 gap-8 border-t border-zinc-800 pt-8">
                         <div className="text-left group/item">
-                            <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-zinc-200 group-hover/item:translate-x-1">0.02s</span>
-                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Latency</span>
+                            <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-zinc-200 group-hover/item:translate-x-1">Millions</span>
+                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Judgments</span>
                         </div>
                         <div className="text-left group/item">
-                            <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-zinc-200 group-hover/item:translate-x-1">256-Bit</span>
-                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Encryption</span>
+                            <span className="block text-white font-sans text-2xl font-bold transition-all group-hover/item:text-zinc-200 group-hover/item:translate-x-1">917+</span>
+                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest">Central Acts</span>
                         </div>
                         <div className="text-left group/item col-span-2">
                             <div className="flex items-center gap-2 mb-1">
                                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                <span className="block text-white font-sans text-sm font-bold transition-all group-hover/item:text-zinc-200">Neural Path Active</span>
+                                <span className="block text-white font-sans text-sm font-bold transition-all group-hover/item:text-zinc-200">Remembers Context</span>
                             </div>
-                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest pl-4">System Status</span>
+                            <span className="text-[10px] uppercase text-zinc-400 tracking-widest pl-4">Persistent Memory Active</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="lg:col-span-8">
-                    <div className="relative glass-strong border border-white/10 shadow-2xl rounded-sm flex flex-col h-[700px] group/chat">
-                        {/* HUD Header */}
-                        <div className="p-4 border-b border-zinc-900 flex items-center justify-between bg-black/40 px-8">
-                            <div className="flex items-center space-x-4">
-                                <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-pulse"></div>
-                                <span className="font-sans text-[11px] text-zinc-200 font-bold uppercase tracking-[0.2em]">Neural Path Active</span>
+                    <div className="relative glass-strong border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.8)] rounded-xl flex flex-col h-[750px] group/chat overflow-hidden">
+
+                        {/* HUD Header - Refined */}
+                        <div className="p-5 border-b border-zinc-900/50 flex items-center justify-between bg-black/60 backdrop-blur-xl px-10 relative z-40">
+                            <div className="flex items-center space-x-5">
+                                <div className="relative">
+                                    <div className="w-2 h-2 rounded-full bg-white shadow-[0_0_20px_white] animate-pulse"></div>
+                                    <div className="absolute inset-0 w-2 h-2 rounded-full bg-white blur-md animate-ping"></div>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="font-sans text-[11px] text-white font-bold uppercase tracking-[0.3em]">Neural Intelligence Active</span>
+                                    <span className="text-[8px] text-zinc-500 uppercase tracking-widest font-bold">Encrypted Node: INDIAN_LAW_V2</span>
+                                </div>
                             </div>
-                            <div className="hidden sm:flex space-x-6">
-                                <span className="font-sans text-[9px] text-zinc-400 uppercase animate-pulse">Latency: 12ms</span>
-                                <span className="font-sans text-[9px] text-zinc-400 uppercase opacity-50">Core: Law-01</span>
+                            <div className="hidden md:flex items-center space-x-8">
+                                <div className="flex flex-col items-end">
+                                    <span className="font-sans text-[9px] text-zinc-400 uppercase tracking-tighter">Status</span>
+                                    <span className="font-sans text-[10px] text-white font-bold">Researching...</span>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Scanline Effect */}
-                        <div className="absolute inset-0 pointer-events-none z-30 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02),rgba(255,255,255,0.06))] bg-[length:100%_2px,3px_100%]"></div>
+                        {/* HUD Body with Integrated Video */}
+                        <div className="flex-1 relative overflow-hidden flex flex-col">
 
-                        {/* Messages Area */}
-                        <div className="flex-1 overflow-y-auto p-12 space-y-10 relative custom-scrollbar">
-                            {messages.map((m, i) => (
-                                <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} animate-[reveal_0.5s_ease-out_forwards]`}>
-                                    <div className={`max-w-[85%] relative ${m.role === 'user' ? 'text-right' : 'text-left'}`}>
-                                        <span className="font-sans text-[8px] text-stone-400 uppercase tracking-widest mb-2 block font-bold transition-colors hover:text-white cursor-default">
-                                            {m.role === 'user' ? 'AUTH_PARTNER_01' : 'CORE_ENGINE_ALPHA'}
-                                        </span>
-                                        <div className={`p-6 rounded-sm text-sm leading-relaxed font-sans transition-all duration-500 hover:scale-[1.01] ${m.role === 'user'
-                                            ? 'bg-white/10 text-white border-r-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.05)]'
-                                            : 'text-stone-300 border-l-2 border-zinc-700 bg-white/5 shadow-[0_0_20px_rgba(255,255,255,0.02)]'
-                                            }`}>
-                                            <div className="whitespace-pre-wrap">
-                                                {m.content}
+                            {/* Cinematic Background Video Integration - Enhanced Masking */}
+                            <div className="absolute inset-0 z-0">
+                                <video
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-full object-cover scale-110 opacity-30 mix-blend-screen saturate-0"
+                                >
+                                    <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-and-data-23157-large.mp4" type="video/mp4" />
+                                </video>
+
+                                {/* Complex Multi-layered Masking */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10 opacity-80"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60 z-10"></div>
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10"></div>
+                            </div>
+
+                            {/* Messages Area - Floating on Glass */}
+                            <div className="flex-1 overflow-y-auto p-12 space-y-12 relative custom-scrollbar z-30">
+                                {messages.map((m, i) => (
+                                    <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} animate-[reveal_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]`}>
+                                        <div className={`max-w-[80%] relative ${m.role === 'user' ? 'text-right' : 'text-left'}`}>
+                                            <div className="flex items-center space-x-3 mb-3 font-bold">
+                                                {m.role !== 'user' && <div className="w-4 h-[1px] bg-zinc-700"></div>}
+                                                <span className="font-sans text-[9px] text-zinc-500 uppercase tracking-[0.3em]">
+                                                    {m.role === 'user' ? 'OPERATOR' : 'LAWXYGEN_AI'}
+                                                </span>
+                                                {m.role === 'user' && <div className="w-4 h-[1px] bg-zinc-700"></div>}
+                                            </div>
+                                            <div className={`p-8 rounded-xl text-base leading-relaxed font-sans transition-all duration-700 hover:scale-[1.02] border ${m.role === 'user'
+                                                ? 'bg-white text-black border-white shadow-[0_10px_40px_rgba(255,255,255,0.1)]'
+                                                : 'text-white border-white/10 bg-white/[0.03] backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.32)]'
+                                                }`}>
+                                                <div className="whitespace-pre-wrap font-light tracking-wide">
+                                                    {m.content}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
-                            {isLoading && (
-                                <div className="flex justify-start">
-                                    <div className="font-sans text-zinc-400 text-xs animate-pulse tracking-widest flex items-center">
-                                        <span className="mr-2">[</span>
-                                        <span className="typing-animation border-r-2 border-white">ANALYZING_CORE_DATABASES...</span>
-                                        <span className="ml-2">]</span>
+                                ))}
+                                {isLoading && (
+                                    <div className="flex justify-start">
+                                        <div className="p-6 bg-white/[0.03] border border-white/5 backdrop-blur-md rounded-lg flex items-center space-x-4">
+                                            <div className="flex space-x-1">
+                                                <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce"></div>
+                                                <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.2s]"></div>
+                                                <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.4s]"></div>
+                                            </div>
+                                            <span className="font-sans text-zinc-400 text-[10px] tracking-[0.2em] font-bold">SEARCHING_JUDGMENTS...</span>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                            <div ref={chatEndRef} />
+                                )}
+                                <div ref={chatEndRef} />
+                            </div>
                         </div>
 
-                        {/* Input Area */}
-                        <form onSubmit={handleSend} className="p-8 border-t border-zinc-900 bg-black/40 group/input">
-                            <div className="relative">
+                        {/* Input Area - Command Center Style */}
+                        <form onSubmit={handleSend} className="p-8 border-t border-zinc-900 bg-black/80 backdrop-blur-2xl relative z-40 group/input">
+                            <div className="relative flex items-center bg-zinc-900/50 rounded-full border border-white/5 focus-within:border-white/20 transition-all px-8 py-2">
+                                <div className="text-zinc-600 mr-4 font-mono text-[10px] font-black opacity-30 select-none">CMD&gt;</div>
                                 <input
                                     type="text"
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
-                                    placeholder="INPUT_LEGAL_QUERY_HERE_..."
-                                    className="w-full bg-black/50 border border-zinc-900 rounded-sm px-6 py-5 text-stone-100 font-sans text-xs focus:outline-none focus:border-white/30 transition-all duration-500 pr-16 placeholder:text-zinc-800 focus:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                                    placeholder="Execute legal research query..."
+                                    className="flex-1 bg-transparent border-none py-4 text-white font-sans text-sm focus:outline-none placeholder:text-zinc-700 font-light tracking-wide"
                                 />
                                 <button
                                     type="submit"
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-white transition-all p-3 group/send"
+                                    className="ml-4 p-4 bg-white rounded-full text-black hover:scale-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] disabled:opacity-50 disabled:scale-100"
                                     disabled={isLoading}
                                 >
-                                    <svg className="w-5 h-5 transform group-hover/send:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
                                 </button>
                             </div>
